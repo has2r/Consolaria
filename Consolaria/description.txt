@@ -1,0 +1,25 @@
+Tons of exclusive mobile and console features are deleted with v1.3. 
+Our aim is to bring this unique content back with improvents in both sprites and code.
+
+Content list:
+- Ocram comes back as a post-Mech boss with its own drops and new shiny Treasure Bag
+- New Ocram weapons and four armor sets: Dragon, Titan, Spectral and Warlock
+- Lepus and Turkor with classic and new unique drops
+- Improved boss AI and expert mode attacks
+- A bunch of ported exclusive pets
+- Unique enemies with new and improved abilities
+- Boss Checklist and Fargo's Mutant Mod support
+- Achievements based on Webmilio's Commons
+- Chinese New Year deleted content
+- Console exclusive vanity - including the Horned God set and many others
+- Holy Hand Grenade!
+
+Planned content:
+- Jungle Sanctum and Heart Shrine
+- Octoberfest, Valentine's Day and St. Patrick's day unique content
+- Mobile exclusive pets - Grandma and others
+- Arch mobs comeback with many improvements!
+- Mc Moneypants NPC
+- Japanese exclusive sets
+
+Also check our WIP bigger project - Rise of Ages! Find its thread in WIP modding section on forums.

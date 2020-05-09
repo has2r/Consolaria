@@ -1,0 +1,46 @@
+using Terraria;
+using Terraria.ModLoader;
+using System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+
+namespace Consolaria.NPCs.Turkor
+{
+	public class Neck : ModProjectile
+	{
+		public override void SetDefaults()
+		{
+			projectile.aiStyle = -1;
+			projectile.width = 10;
+			projectile.height = 10;
+			projectile.hostile = true;
+			projectile.penetrate = -1;
+			projectile.magic = true;
+			projectile.tileCollide = false;
+			projectile.ignoreWater = true;
+		}
+		public override void AI()
+		{
+			Vector2 vector7 = new Vector2(projectile.position.X + (projectile.width * 0.5f), projectile.position.Y + (projectile.height * 0.5f));
+			float rotation0 = (float)Math.Atan2((vector7.Y) - (Main.npc[CGlobalNPC.turkeyBoss].oldPosition.Y + 15 + (Main.npc[CGlobalNPC.turkeyBoss].height * 0.5f)), (vector7.X) - (Main.npc[CGlobalNPC.turkeyBoss].oldPosition.X + (Main.npc[CGlobalNPC.turkeyBoss].width * 0.5f)));
+			projectile.velocity.X = (float)(Math.Cos(rotation0) * 16) * -1;
+			projectile.velocity.Y = (float)(Math.Sin(rotation0) * 16) * -1;
+			if (!NPC.AnyNPCs(mod.NPCType("TurkortheUngrateful")))
+			{
+				projectile.Kill();
+			}
+			projectile.rotation = projectile.direction - 1.7f;
+			projectile.spriteDirection = projectile.direction;
+			for (int k = 0; k < 200; k++)
+			{
+				if (Main.npc[k].Hitbox.Intersects(projectile.Hitbox))
+				{
+					if (Main.npc[k].type == mod.NPCType("TurkortheUngrateful"))
+					{
+						projectile.Kill();
+					}
+				}
+			}
+		}
+	}
+}

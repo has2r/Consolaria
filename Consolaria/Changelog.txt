@@ -1,0 +1,55 @@
+1.2.1:
+- Improved Warlock armor set
+-- Completely new sprites
+-- Rebalanced set bonus
+-- Fixed Warlock Hood rarity
+-- Old armor textures moved to a new 'ancient' version
+- AchievementLib-based achievements for Lepus, Turkor and Ocram!
+- Turkor's body health is greatly reduced, head health is increased
+-- These changes should make the fight more dynamic and less frustratingly long
+- Changed Ocram skull attack sound effects
+- Fixed skull attack sound effects playing in Normal mode fight for no reason
+- Skulls are slightly slower but still spooky
+- Resprited Great Drumstick and Turkor Trophy
+- Small changes to Lepus and Turkor trophy sprites and items
+- Improved visuals for Eye of Eternity minion
+- Eye of Eternity lasers should no longer damage the player
+- Improved Ocram map icon and Cursed Fang sprite (once again)
+- Added Shadow Slime because you asked for it
+- It still sucks though
+- Added a respective banner
+- Improved Slime pet sprite (and added transparency)
+- Fixed Ostara's Gift not working in multiplayer (probably)
+- This will be the last update for a while, have fun!
+
+1.2:
+- Added console exclusive enemies with some epic new attacks
+--- No Shadow Slime
+--- Honestly, screw Shadow Slime
+--- Albino Antlion is trying hard not to summon demons and imps like he did during tests
+--- Banners for these enemies exist as well
+- Added exclusive pets including extra cute Guinea pig
+--- ^ A lot of resprites here ^
+- Added seasonal event date restrictions - disabled by default, can be enabled via config button
+- Ocram's loot underwent a huge rework
+--- Armor sets resprited epicly
+--- Stat boosts are rebalanced
+--- Glorious new set bonuses
+--- Added 'ancient' versions for Dragon, Titan and Spectral armor sets (old sprites)
+--- Ancient versions are obtained from Ocram while normal ones are crafted
+--- Eye of Ocram, Eternity Staff and Dragon's Breath are obtained from Ocram while Tizona, Tonbogiri and Vulcan Crossbow are exclusively crafted
+--- Tizona, Tonbogiri and Eye of Ocram received proper attacks
+--- New sprites for Soul of Blight, Vulcan Crossbow and Eye of Ocram
+--- Added Sparkly Wings
+--- Adamantite is removed from the drop pool
+- Added Roman Candle
+- Removed Roman Candle
+- Replaced Turkor's body texture
+- It's been poorly resized and crappy for like half a year and nobody noticed
+- There's probably something I missed
+- Thanks to everyone for their support
+- Thanks to Zadum4ivii and Veron for helping out
+- Thanks to me for writing some code
+- I'll never do that again
+- I'm actually surprised we released the update in time
+- Happy Halloween!
