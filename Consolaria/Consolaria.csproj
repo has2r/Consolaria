@@ -12,7 +12,7 @@
   </Target>
   <ItemGroup>
     <Reference Include="WebmilioCommons">
-      <HintPath>..\..\..\..\..\..\Desktop\WebmilioCommons.dll</HintPath>
+      <HintPath>..\WebmilioCommons.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

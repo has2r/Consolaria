@@ -302,9 +302,6 @@ namespace Consolaria.NPCs
 		{
 			if (Main.netMode != 1)
 			{
-				int centerX = (int)(npc.position.X + (npc.width / 2)) / 16;
-				int centerY = (int)(npc.position.Y + (npc.height / 2)) / 16;
-				int halfLength = npc.width / 2 / 16 + 1;
 
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 575, Main.rand.Next(10, 15));
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("RedEnvelope"), Main.rand.Next(5, 15));
@@ -320,7 +317,7 @@ namespace Consolaria.NPCs
 			int x = spawnInfo.spawnTileX;
 			int y = spawnInfo.spawnTileY;
 			int tile = Main.tile[x, y].type;
-			return (spawnInfo.sky && Main.hardMode) && !Helper.ChineseNewYear ? 0.04f : 0f;
+			return (spawnInfo.sky && Main.hardMode) ? 0.04f : 0f;
 		}
 	}
 }

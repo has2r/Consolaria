@@ -3,6 +3,7 @@ using Terraria.ModLoader;
 using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 
 namespace Consolaria.NPCs.Turkor
 {
@@ -18,6 +19,7 @@ namespace Consolaria.NPCs.Turkor
 			projectile.magic = true;
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;
+			projectile.hide = true;
 		}
 		public override void AI()
 		{
@@ -41,6 +43,10 @@ namespace Consolaria.NPCs.Turkor
 					}
 				}
 			}
+		}
+		public override void DrawBehind(int index, List<int> drawCacheProjsBehindNPCsAndTiles, List<int> drawCacheProjsBehindNPCs, List<int> drawCacheProjsBehindProjectiles, List<int> drawCacheProjsOverWiresUI)
+		{
+			drawCacheProjsBehindNPCs.Add(index);
 		}
 	}
 }

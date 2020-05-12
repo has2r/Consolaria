@@ -22,7 +22,7 @@ namespace Consolaria.NPCs.Turkor
             npc.HitSound = SoundID.NPCHit7;
             npc.DeathSound = SoundID.NPCDeath8;
             npc.knockBackResist = 0.0f;
-            Main.npcFrameCount[npc.type] = 7;
+            Main.npcFrameCount[npc.type] = 3;
             npc.buffImmune[BuffID.Poisoned] = true;
             npc.buffImmune[BuffID.Confused] = true;
             npc.buffImmune[BuffID.OnFire] = true;
@@ -70,27 +70,31 @@ namespace Consolaria.NPCs.Turkor
         {
             if (npc.velocity.X > -3f && npc.velocity.X < 3f || npc.ai[1] >= 180 && npc.ai[1] <= 200)
             {
-                npc.frame.Y = 360;
+                npc.frame.Y = 130;
                 npc.frameCounter += 0.0f;
             }
-
             else if (npc.velocity.X > -3f)
             {
                 npc.spriteDirection = 1;
                 npc.frameCounter += 0.1f;
-                npc.frameCounter %= 6;
+                npc.frameCounter %= 2;
                 int frame = (int)npc.frameCounter;
                 npc.frame.Y = frame * frameHeight;
             }
-
             else if (npc.velocity.X < 3f)
             {
                 npc.spriteDirection = -1;
                 npc.frameCounter += 0.1f;
-                npc.frameCounter %= 6;
+                npc.frameCounter %= 2;
                 int frame = (int)npc.frameCounter;
                 npc.frame.Y = frame * frameHeight;
             }
+            if (dashTimer > 0)
+            {
+                npc.frame.Y = 0;
+                npc.frameCounter = 0.0f;
+            }
+          
         }
 
         private Rectangle GetFrame(int number)
@@ -99,10 +103,12 @@ namespace Consolaria.NPCs.Turkor
         }
 
         private int timer = 0;
+        private float dashTimer = 0;
         int leader = ModContent.NPCType<TurkortheUngrateful>();
 
         public override void AI()
         {
+           // Main.NewText(dash);
             Vector2 velocity1 = Vector2.Normalize(Main.npc[NPC.FindFirstNPC(leader)].Center - npc.Center) * 16;
             Vector2 vector32 = new Vector2(npc.position.X + (float)npc.width * 0.5f, npc.position.Y + (float)npc.height * 0.5f);
             Projectile.NewProjectile(npc.Center.X - 4, npc.Center.Y + 14, velocity1.X, velocity1.Y, mod.ProjectileType("Neck"), (int)(npc.damage / 4), 0f, Main.myPlayer, 0f, npc.whoAmI);
@@ -169,6 +175,7 @@ namespace Consolaria.NPCs.Turkor
             }
             if (Main.rand.Next(350) == 0)
             {
+                dashTimer++;
                 Main.PlaySound(mod.GetLegacySoundSlot(SoundType.Custom, "Sounds/turkor_attack"), npc.position);
                 npc.velocity.X *= 0.98f;
                 npc.velocity.Y *= 0.98f;
@@ -181,6 +188,13 @@ namespace Consolaria.NPCs.Turkor
                     return;
                 }
             }
+            //  Main.NewText(dashTimer);
+            //   dashTimer = 0;
+            if (dashTimer > 1.1f)
+            {
+                dashTimer = 0;
+            }
+
             if (Main.player[npc.target].position.X < npc.position.X)
             {
                 if (npc.velocity.X > -3) { npc.velocity.X -= 0.3f; }

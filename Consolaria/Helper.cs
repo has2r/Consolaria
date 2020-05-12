@@ -39,19 +39,6 @@ namespace Consolaria
                 Thanksgiving = false;
         }
 
-        public static void checkChineseNewYear()
-        {
-            DateTime now = DateTime.Now;
-            int day = now.Day;
-            int month = now.Month;
-            if ((day >= 21 && month == 1) && ServerConfig.Instance.SeasonsEnabled)
-                ChineseNewYear = true;
-            else if ((day <= 26 && month == 2) && ServerConfig.Instance.SeasonsEnabled)
-                ChineseNewYear = true;
-            else
-                ChineseNewYear = false;
-        }
-
         public static NPC NewNPC(Vector2 position, string npc)
         {
             return Main.npc[NPC.NewNPC((int)position.X, (int)position.Y, Consolaria.instance.NPCType(npc), 0, 0f, 0f, 0f, 0f, 255)];

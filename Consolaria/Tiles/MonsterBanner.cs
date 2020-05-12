@@ -75,13 +75,7 @@ namespace Consolaria.Tiles
 					item = "MythicalWyvernBanner";
 					break;
 				case 15:
-					item = "DragonSkull1Banner";
-					break;
-				case 16:
-					item = "DragonSkull2Banner";
-					break;
-				case 17:
-					item = "DragonSkull3Banner";
+					item = "DragonSkullBanner";
 					break;
 				default:
 					return;
@@ -139,13 +133,7 @@ namespace Consolaria.Tiles
 						type = "MythicalWyvernBanner";
 						break;
 					case 15:
-						type = "DragonSkull1Banner";
-						break;
-					case 16:
-						type = "DragonSkull2Banner";
-						break;
-					case 17:
-						type = "DragonSkull3Banner";
+						type = "DragonSkullBanner";
 						break;
 					default:
 						return;

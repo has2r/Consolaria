@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Consolaria.Items.Banners
 {
-	public class DragonSkull3Banner : ModItem
+	public class DragonSkullBanner : ModItem
 	{
 		public override void SetDefaults()
 		{
@@ -19,7 +19,7 @@ namespace Consolaria.Items.Banners
 			item.rare = 1;
 			item.value = Item.buyPrice(0, 0, 10, 0);
 			item.createTile = mod.TileType("MonsterBanner");
-			item.placeStyle = 17;       
+			item.placeStyle = 15;       
 		}
 	}
 }

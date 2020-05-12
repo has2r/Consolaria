@@ -1,16 +1,17 @@
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Consolaria.NPCs
 {
-	public class DragonSkull2 : ModNPC
+	public class DragonSkull : ModNPC
 	{
+		public int counter;
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Dragon Skull");
+			Main.npcFrameCount[npc.type] = 3;
 		}
 
 		public override void SetDefaults()
@@ -28,31 +29,44 @@ namespace Consolaria.NPCs
 			npc.noGravity = true;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 1, 0, 0);
-            npc.buffImmune[BuffID.Poisoned] = true;
-            npc.buffImmune[BuffID.OnFire] = true;
-            npc.buffImmune[BuffID.Confused] = true;
-            npc.buffImmune[BuffID.CursedInferno] = true;
-            npc.buffImmune[BuffID.Venom] = true;
-            npc.buffImmune[BuffID.ShadowFlame] = true;
-        //    banner = npc.type;
-		//	bannerItem = mod.ItemType("DragonSkullBanner");
+			npc.buffImmune[BuffID.Poisoned] = true;
+			npc.buffImmune[BuffID.OnFire] = true;
+			npc.buffImmune[BuffID.Confused] = true;
+			npc.buffImmune[BuffID.CursedInferno] = true;
+			npc.buffImmune[BuffID.Venom] = true;
+			npc.buffImmune[BuffID.ShadowFlame] = true;
+			banner = npc.type;
+			bannerItem = mod.ItemType("DragonSkullBanner");
 		}
-
+		public override void FindFrame(int frameHeight)
+		{
+			npc.spriteDirection = -npc.direction;
+			npc.frameCounter += 1.0;
+			if (npc.frameCounter > 5.0)
+			{
+				counter++;
+				npc.frameCounter = 0.0;
+			}
+			if (counter >= 3)
+			{
+				counter = 0;
+			}
+			npc.frame.Y = counter * frameHeight;
+		}
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
 		{
 			npc.lifeMax = npc.lifeMax * 1;
 			npc.damage = npc.damage * 1;
 		}
-
-        public override void ModifyHitPlayer(Player target, ref int damage, ref bool crit)
-        {
-            target.AddBuff(BuffID.Cursed, 300);
-        }
-        public override void AI()
-        {
-            npc.velocity = npc.velocity * 1.02f;
-        }
-        public override float SpawnChance(NPCSpawnInfo spawnInfo)
+		public override void ModifyHitPlayer(Player target, ref int damage, ref bool crit)
+		{
+			target.AddBuff(BuffID.Cursed, 300);
+		}
+		public override void AI()
+		{
+			npc.velocity = npc.velocity * 1.02f;
+		}
+		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
 			int x = spawnInfo.spawnTileX;
 			int y = spawnInfo.spawnTileY;
@@ -85,27 +99,26 @@ namespace Consolaria.NPCs
 				}
 			}
 		}
+		public override void NPCLoot()
+		{
+			if (Main.netMode != 1)
+			{
+				int centerX = (int)(npc.position.X + (npc.width / 2)) / 16;
+				int centerY = (int)(npc.position.Y + (npc.height / 2)) / 16;
+				int halfLength = npc.width / 2 / 16;
 
-        public override void NPCLoot()
-        {
-            if (Main.netMode != 1)
-            {
-                int centerX = (int)(npc.position.X + (npc.width / 2)) / 16;
-                int centerY = (int)(npc.position.Y + (npc.height / 2)) / 16;
-                int halfLength = npc.width / 2 / 16;
+				if (Main.rand.Next(80) == 0)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.GoldenKey);
+				};
 
-                if (Main.rand.Next(80) == 0)
-                {
-                    Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.GoldenKey);
-                };
+				if (Main.rand.Next(90) == 0)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Nazar);
+				};
 
-                if (Main.rand.Next(90) == 0)
-                {
-                    Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Nazar);
-                };
-
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Bone, Main.rand.Next(1, 4));
-            }
-        }
-    }
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Bone, Main.rand.Next(1, 4));
+			}
+		}
+	}
 }

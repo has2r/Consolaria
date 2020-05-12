@@ -1,12 +1,8 @@
-﻿using Consolaria.NPCs.Lepus;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Terraria;
-using Terraria.Achievements;
-using Terraria.GameContent.Achievements;
 using Terraria.ID;
 using Terraria.ModLoader;
-using WebmilioCommons.Achievements;
 
 namespace Consolaria
 {
@@ -31,7 +27,6 @@ namespace Consolaria
             GlowMask.Load();
             Helper.checkThanksgiving();
             Helper.checkEaster();
-            Helper.checkChineseNewYear();
         }
 
         public override void PostSetupContent()
@@ -41,7 +36,7 @@ namespace Consolaria
             {
                 fargos.Call("AddSummon", 9.9f, "Consolaria", "SuspiciousLookingSkull", (Func<bool>)(() => CWorld.downedOcram), 500000);
                 fargos.Call("AddSummon", 5.65f, "Consolaria", "StuffedHeart", (Func<bool>)(() => CWorld.downedTurkor), 180000);
-                fargos.Call("AddSummon", 2.45f, "Consolaria", "SuspiciousLookingEgg", (Func<bool>)(() => CWorld.downedLepus), 60000);
+                fargos.Call("AddSummon", 1.9f, "Consolaria", "SuspiciousLookingEgg", (Func<bool>)(() => CWorld.downedLepus), 60000);
             }
 
             Mod bossChecklist = ModLoader.GetMod("BossChecklist");
@@ -49,7 +44,7 @@ namespace Consolaria
             {
                 bossChecklist.Call(
                     "AddBoss",
-                    2.45f,
+                    1.9f,
                     ModContent.NPCType<NPCs.Lepus.Lepus>(),
                     this,
                     "Lepus",
