@@ -5,6 +5,10 @@ namespace Consolaria.Items.Banners
 {
 	public class DisasterBunnyBanner : ModItem
 	{
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Diseaster Bunny");
+		}
 		public override void SetDefaults()
 		{
 			item.width = 10;

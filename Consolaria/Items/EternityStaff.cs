@@ -19,8 +19,8 @@ namespace Consolaria.Items
 			item.useStyle = 1;
 			item.noMelee = true;
 			item.knockBack = 4;
-            item.value = Item.sellPrice(0, 6, 0, 0);
-            item.rare = 7;
+			item.value = Item.sellPrice(0, 6, 0, 0);
+			item.rare = 7;
 			item.UseSound = SoundID.Item44;
 			item.shoot = mod.ProjectileType("EternityStaffPro");
 			item.shootSpeed = 1f;
@@ -32,7 +32,7 @@ namespace Consolaria.Items
 		{
 			DisplayName.SetDefault("Staff of Eternity");
 			Tooltip.SetDefault("Summons an Eye of Eternity to fight for you.");
-        }
+		}
 
 		public override bool AltFunctionUse(Player player)
 		{
