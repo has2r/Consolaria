@@ -1,5 +1,4 @@
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Vanity
@@ -25,15 +24,6 @@ namespace Consolaria.Items.Vanity
         public override bool IsArmorSet(Item head, Item body, Item legs)
         {
             return body.type == mod.ItemType("FabulousDress") && legs.type == mod.ItemType("FabulousSlippers");
-        }
-        public override void AddRecipes()
-        {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.Silk, 10);
-            recipe.AddIngredient(ItemID.PinkThread, 4);
-            recipe.AddTile(TileID.Loom);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
         }
     }
 }

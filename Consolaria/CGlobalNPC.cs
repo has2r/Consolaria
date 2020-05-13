@@ -151,9 +151,10 @@ namespace Consolaria
         }
         public override void SetupShop(int type, Chest shop, ref int nextSlot)
         {
+            Player player = Main.player[Main.myPlayer];
             if (type == NPCID.Clothier)
             {
-                if (Main.bloodMoon)
+                if (Main.moonPhase == 1)
                 {
                     shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Vanity.ShirenHat>());
                     nextSlot++;
@@ -161,6 +162,27 @@ namespace Consolaria
                     nextSlot++;
                     shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Vanity.ShirenPants>());
                     nextSlot++;
+                }
+                if (Main.bloodMoon)
+                {
+                    if (player.Male)
+                    {
+                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Vanity.GeorgesHat>());
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Vanity.GeorgesTuxedoShirt>());
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Vanity.GeorgesTuxedoPants>());
+                        nextSlot++;
+                    }
+                    else
+                    {
+                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Vanity.FabulousRibbon>());
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Vanity.FabulousDress>());
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Vanity.FabulousSlippers>());
+                        nextSlot++;
+                    }
                 }
 
                 if (Main.xMas)
@@ -203,13 +225,6 @@ namespace Consolaria
                         shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Pets.TurkeyFeather>());
                         nextSlot++;
                     }
-                }
-                if (Main.moonPhase == 1)
-                {
-                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Vanity.ShirenShirt>());
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Vanity.ShirenPants>());
-                    nextSlot++;
                 }
             }
         }

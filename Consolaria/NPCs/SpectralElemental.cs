@@ -55,7 +55,7 @@ namespace Consolaria.NPCs
         }
         private void Teleport(Vector2 playerPosition)
         {
-            Vector2 teleportTo = new Vector2(playerPosition.X + 80, playerPosition.Y);
+            Vector2 teleportTo = new Vector2(playerPosition.X + 120, playerPosition.Y);
             Vector2 teleportFrom = new Vector2(npc.position.X, npc.position.Y);
             Vector2 NormalizedVec = new Vector2(0, -2f);
             NormalizedVec.Normalize();

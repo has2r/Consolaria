@@ -1,7 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.Localization;
-using Terraria.ID;
 
 namespace Consolaria.Items.Vanity
 {
@@ -24,15 +23,6 @@ namespace Consolaria.Items.Vanity
             Tooltip.SetDefault("Oh myyy!");
             DisplayName.AddTranslation(GameCulture.Russian, "Костюм Мафиозника");
             Tooltip.AddTranslation(GameCulture.Russian, "");
-        }
-        public override void AddRecipes()
-        {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.Silk, 15);
-            recipe.AddIngredient(ItemID.PinkThread, 6);
-            recipe.AddTile(TileID.Loom);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
         }
     }
 }

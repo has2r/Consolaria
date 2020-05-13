@@ -25,7 +25,7 @@ namespace Consolaria.Items.Vanity
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.Silk, 20);
-            recipe.AddIngredient(ItemID.BlackThread, 3);
+            recipe.AddIngredient(ItemID.PinkThread, 3);
             recipe.AddIngredient(null, "WhiteThread", 3);
             recipe.AddTile(TileID.Loom);
             recipe.SetResult(this);

@@ -1,6 +1,5 @@
 using Terraria;
 using Terraria.ModLoader;
-using Terraria.ID;
 
 namespace Consolaria.Items.Vanity
 {
@@ -21,15 +20,6 @@ namespace Consolaria.Items.Vanity
         {
             DisplayName.SetDefault("Fabulous Slippers");
             Tooltip.SetDefault("Oh myyy!");
-        }
-        public override void AddRecipes()
-        {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.Silk, 10);
-            recipe.AddIngredient(ItemID.PinkThread, 4);
-            recipe.AddTile(TileID.Loom);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
-        }
+        }    
     }
 }

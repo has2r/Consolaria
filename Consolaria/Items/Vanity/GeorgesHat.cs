@@ -1,5 +1,4 @@
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
 
@@ -25,15 +24,6 @@ namespace Consolaria.Items.Vanity
             Tooltip.SetDefault("Oh myyy!");
             DisplayName.AddTranslation(GameCulture.Russian, "Шляпа Мафиозника");
             Tooltip.AddTranslation(GameCulture.Russian, "");
-        }
-        public override void AddRecipes()
-        {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.Silk, 10);
-            recipe.AddIngredient(ItemID.PinkThread, 4);
-            recipe.AddTile(TileID.Loom);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
         }
         public override bool IsArmorSet(Item head, Item body, Item legs)
         {

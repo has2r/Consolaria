@@ -21,7 +21,7 @@ namespace Consolaria.NPCs.Ocram
             npc.aiStyle = -1;
             animationType = 126;
             npc.lifeMax = 35000;
-            npc.damage = 65;
+            npc.damage = 50;
             npc.defense = 20;
             npc.knockBackResist = 0f;
             npc.width = 195;
@@ -41,13 +41,13 @@ namespace Consolaria.NPCs.Ocram
         public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
         {
             npc.lifeMax = 45000 + 1000 * numPlayers;
-            npc.damage = 80;
+            npc.damage = 60;
             npc.defense = 25;
         }
 
-        bool Phase2 = false;
-        public const int MissileProjectiles = 5;
-        public const float MissileAngleSpread = 150;
+        private bool Phase2 = false;
+        private const int MissileProjectiles = 5;
+        private const float MissileAngleSpread = 150;
 
         public override void AI()
         {
@@ -57,7 +57,7 @@ namespace Consolaria.NPCs.Ocram
             }
             if (Main.expertMode)
             {
-                if (npc.life < (int)(npc.lifeMax * 0.75))
+                if (npc.life < (int)(npc.lifeMax * 0.70))
                 {
                     Phase2 = true;
                 }
@@ -485,25 +485,28 @@ namespace Consolaria.NPCs.Ocram
                                     {
                                         npc.localAI[1] += 2f;
                                     }
-                                    if (npc.localAI[1] > 4f)
+                                    if (npc.localAI[1] > 5f)
                                     {
                                         npc.localAI[1] = 0f;
+                                        npc.velocity.Y = npc.velocity.Y * 0.7f;
+                                        npc.velocity.X = npc.velocity.X * 0.7f;
                                         int num362 = 1;
-                                        float num363 = Main.player[npc.target].position.X + (float)(Main.player[npc.target].width / 2) - (float)(num362 * 150) - vector36.X;
+                                        int zalupa = Main.rand.Next(-80, 80);
+                                        float num363 = Main.player[npc.target].position.X + (float)(Main.player[npc.target].width / 2) - (float)(num362 * 70) - vector36.X;
                                         float num364 = Main.player[npc.target].position.Y + (float)(Main.player[npc.target].height / 2) - vector36.Y;
                                         float num365 = (float)Math.Sqrt((double)(num363 * num363 + num364 * num364));
                                         vector36 = new Vector2(npc.position.X + (float)npc.width * 0.5f, npc.position.Y + (float)npc.height * 0.5f);
-                                        num363 = Main.player[npc.target].position.X + (float)(Main.player[npc.target].width / 2) - vector36.X;
-                                        num364 = Main.player[npc.target].position.Y + (float)(Main.player[npc.target].height / 2)- vector36.Y;
+                                        num363 = Main.player[npc.target].position.X + (float)(Main.player[npc.target].width / 2) - zalupa - vector36.X;
+                                        num364 = Main.player[npc.target].position.Y + (float)(Main.player[npc.target].height / 2) - zalupa - vector36.Y;
                                         float num366 = 12f;
                                         num365 = (float)Math.Sqrt((double)(num363 * num363 + num364 * num364));
                                         num365 = num366 / num365;
                                         num363 *= num365;
                                         num364 *= num365;
-                                        num363 += (float)Main.rand.Next(-40, 41) * 0.05f;
-                                        num364 += (float)Main.rand.Next(-40, 41) * 0.05f;
-                                        vector36.X += num363 * 4f;
-                                        vector36.Y += num364 * 4f;
+                                        num363 += (float)Main.rand.Next(-30, 31) * 0.05f;
+                                        num364 += (float)Main.rand.Next(-30, 31) * 0.05f;
+                                        vector36.X += num363 * 3f;
+                                        vector36.Y += num364 * 3f;
                                         Vector2 vector8 = new Vector2(npc.position.X + (npc.width / 2), npc.position.Y + (npc.height / 2));
                                         Main.PlaySound(2, (int)npc.position.X, (int)npc.position.Y, 33);
                                         float rotation = (float)Math.Atan2(vector8.Y - (Main.player[npc.target].position.Y + (Main.player[npc.target].height * 0.5f)), vector8.X - (Main.player[npc.target].position.X + (Main.player[npc.target].width * 0.5f)));
@@ -528,25 +531,25 @@ namespace Consolaria.NPCs.Ocram
                                 Vector2 velocity = Vector2.Normalize(Main.player[npc.target].Center - npc.Center) * Speed;
                                 if (Main.expertMode)
                                 {
-                                    Projectile.NewProjectile(npc.position.X + 120, npc.position.Y + 50, velocity.X, velocity.Y, 44, 30, 0f, 0);
-                                    Projectile.NewProjectile(npc.position.X + 160, npc.position.Y + 50, velocity.X, velocity.Y, 44, 30, 0f, 0);
-                                    Projectile.NewProjectile(npc.position.X - 120, npc.position.Y - 50, velocity.X, velocity.Y, 44, 30, 0f, 0);
-                                    Projectile.NewProjectile(npc.position.X - 160, npc.position.Y - 50, velocity.X, velocity.Y, 44, 30, 0f, 0);
-                                    Projectile.NewProjectile(npc.position.X + 50, npc.position.Y + 120, velocity.X, velocity.Y, 44, 30, 0f, 0);
-                                    Projectile.NewProjectile(npc.position.X + 50, npc.position.Y + 160, velocity.X, velocity.Y, 44, 30, 0f, 0);
-                                    Projectile.NewProjectile(npc.position.X - 50, npc.position.Y - 120, velocity.X, velocity.Y, 44, 30, 0f, 0);
-                                    Projectile.NewProjectile(npc.position.X - 50, npc.position.Y - 160, velocity.X, velocity.Y, 44, 30, 0f, 0);
+                                    Projectile.NewProjectile(npc.position.X + 120, npc.position.Y + 50, velocity.X, velocity.Y, 44, 26, 0f, 0);
+                                    Projectile.NewProjectile(npc.position.X + 160, npc.position.Y + 50, velocity.X, velocity.Y, 44, 26, 0f, 0);
+                                    Projectile.NewProjectile(npc.position.X - 120, npc.position.Y - 50, velocity.X, velocity.Y, 44, 26, 0f, 0);
+                                    Projectile.NewProjectile(npc.position.X - 160, npc.position.Y - 50, velocity.X, velocity.Y, 44, 26, 0f, 0);
+                                    Projectile.NewProjectile(npc.position.X + 50, npc.position.Y + 120, velocity.X, velocity.Y, 44, 26, 0f, 0);
+                                    Projectile.NewProjectile(npc.position.X + 50, npc.position.Y + 160, velocity.X, velocity.Y, 44, 26, 0f, 0);
+                                    Projectile.NewProjectile(npc.position.X - 50, npc.position.Y - 120, velocity.X, velocity.Y, 44, 26, 0f, 0);
+                                    Projectile.NewProjectile(npc.position.X - 50, npc.position.Y - 160, velocity.X, velocity.Y, 44, 26, 0f, 0);
                                 }
                                 else
                                 {
-                                    Projectile.NewProjectile(npc.position.X + 120, npc.position.Y + 50, velocity.X, velocity.Y, 44, 72, 0f, 0);
-                                    Projectile.NewProjectile(npc.position.X + 160, npc.position.Y + 50, velocity.X, velocity.Y, 44, 72, 0f, 0);
-                                    Projectile.NewProjectile(npc.position.X - 120, npc.position.Y - 50, velocity.X, velocity.Y, 44, 72, 0f, 0);
-                                    Projectile.NewProjectile(npc.position.X - 160, npc.position.Y - 50, velocity.X, velocity.Y, 44, 72, 0f, 0);
-                                    Projectile.NewProjectile(npc.position.X + 50, npc.position.Y + 120, velocity.X, velocity.Y, 44, 72, 0f, 0);
-                                    Projectile.NewProjectile(npc.position.X + 50, npc.position.Y + 160, velocity.X, velocity.Y, 44, 72, 0f, 0);
-                                    Projectile.NewProjectile(npc.position.X - 50, npc.position.Y - 120, velocity.X, velocity.Y, 44, 72, 0f, 0);
-                                    Projectile.NewProjectile(npc.position.X - 50, npc.position.Y - 160, velocity.X, velocity.Y, 44, 72, 0f, 0);
+                                    Projectile.NewProjectile(npc.position.X + 120, npc.position.Y + 50, velocity.X, velocity.Y, 44, 55, 0f, 0);
+                                    Projectile.NewProjectile(npc.position.X + 160, npc.position.Y + 50, velocity.X, velocity.Y, 44, 55, 0f, 0);
+                                    Projectile.NewProjectile(npc.position.X - 120, npc.position.Y - 50, velocity.X, velocity.Y, 44, 55, 0f, 0);
+                                    Projectile.NewProjectile(npc.position.X - 160, npc.position.Y - 50, velocity.X, velocity.Y, 44, 55, 0f, 0);
+                                    Projectile.NewProjectile(npc.position.X + 50, npc.position.Y + 120, velocity.X, velocity.Y, 44, 55, 0f, 0);
+                                    Projectile.NewProjectile(npc.position.X + 50, npc.position.Y + 160, velocity.X, velocity.Y, 44, 55, 0f, 0);
+                                    Projectile.NewProjectile(npc.position.X - 50, npc.position.Y - 120, velocity.X, velocity.Y, 44, 55, 0f, 0);
+                                    Projectile.NewProjectile(npc.position.X - 50, npc.position.Y - 160, velocity.X, velocity.Y, 44, 55, 0f, 0);
                                 }
                                 Main.PlaySound(15, (int)npc.position.X, (int)npc.position.Y, 0);
                                 npc.rotation = num319;
@@ -597,25 +600,22 @@ namespace Consolaria.NPCs.Ocram
                     }
                 }
             }
-            if (Phase2 && Main.rand.Next(150) == 0)
+            if (Phase2 && Main.rand.Next(350) == 0)
             {
                 Vector2 Vector3 = new Vector2(npc.position.X + npc.width * 0.1f, npc.position.Y + npc.height * 0.1f);
-                float Num26 = Main.player[npc.target].position.X + (Main.player[npc.target].width / 2) - Vector3.X;
-                float Num27 = Main.player[npc.target].position.Y + (Main.player[npc.target].height / 2) - 200f - Vector3.Y;
                 if (Main.expertMode)
                 {
                     if (Collision.CanHit(Vector3, 1, 1, Main.player[npc.target].position, Main.player[npc.target].width, Main.player[npc.target].height))
                     {
                         if (Main.netMode != 1)
                         {
-                            for (int playerIndex = 0; playerIndex < 255; playerIndex++)
+                            for (int playerIndex = 0; playerIndex < 200; playerIndex++)
                             {
                                 if (Main.player[playerIndex].active)
                                 {
                                     for (int i = 0; i < MissileProjectiles; i++)
                                     {
                                         Main.PlaySound(4, (int)npc.position.X, (int)npc.position.Y, 45, 0.8f, 0f);
-                                        int Num32;
                                         Player player = Main.player[playerIndex];
                                         int Speed = 10;
                                         float SpawnX = Main.rand.Next(1000) - 500 + player.Center.X;
@@ -625,32 +625,18 @@ namespace Consolaria.NPCs.Ocram
                                         BaseVelocity.Normalize();
                                         BaseVelocity = BaseVelocity * Speed / 2;
                                         Vector2 Spawn = BaseSpawn;
-                                        Spawn.X = Spawn.X + i * 30 - (MissileProjectiles * 15);
+                                        Spawn.X = Spawn.X + i * 30 - (MissileProjectiles * 20);
                                         Vector2 Velocity = BaseVelocity;
                                         Velocity = BaseVelocity.RotatedBy(MathHelper.ToRadians(-MissileAngleSpread / 4 + (MissileAngleSpread * i / MissileProjectiles)));
                                         Velocity.X = Velocity.X + 2 * Main.rand.NextFloat() - 1.3f;
-                                        if (Main.expertMode)
+                                        if (Main.rand.Next(4) == 0)
                                         {
-                                            if (Main.rand.Next(2) == 0)
-                                            {
-                                                Num32 = Projectile.NewProjectile(Spawn.X, Spawn.Y, Velocity.X, Velocity.Y, mod.ProjectileType("OcramSkull"), 32, 1f, Main.myPlayer, 0f, 0f); ;
-                                            }
-                                            int Num33 = Projectile.NewProjectile(Spawn.X, Spawn.Y, Velocity.X, Velocity.Y, mod.ProjectileType("OcramSkull"), 32, 1f, Main.myPlayer, 0f, 0f);
-                                            Main.projectile[Num33].velocity.X = Main.rand.Next(-200, 201) * 0.1f;
-                                            Main.npc[Num33].velocity.Y = Main.rand.Next(-200, 201) * 0.02f;
-                                            Main.npc[Num33].netUpdate = true;
+                                            Projectile.NewProjectile(Spawn.X, Spawn.Y, Velocity.X, Velocity.Y, mod.ProjectileType("OcramSkull"), 28, 1f, Main.myPlayer, 0f, 0f); ;
                                         }
-                                        else
-                                        {
-                                            if (Main.rand.Next(2) == 0)
-                                            {
-                                                Num32 = Projectile.NewProjectile(Spawn.X, Spawn.Y, Velocity.X, Velocity.Y, mod.ProjectileType("OcramSkull"), 28, 1f, Main.myPlayer, 0f, 0f); ;
-                                            }
-                                            int Num33 = Projectile.NewProjectile(Spawn.X, Spawn.Y, Velocity.X, Velocity.Y, mod.ProjectileType("OcramSkull"), 28, 1f, Main.myPlayer, 0f, 0f);
-                                            Main.projectile[Num33].velocity.X = Main.rand.Next(-200, 201) * 0.1f;
-                                            Main.npc[Num33].velocity.Y = Main.rand.Next(-200, 201) * 0.02f;
-                                            Main.npc[Num33].netUpdate = true;
-                                        }                                      
+                                        int Num33 = Projectile.NewProjectile(Spawn.X, Spawn.Y, Velocity.X, Velocity.Y, mod.ProjectileType("OcramSkull"), 28, 1f, Main.myPlayer, 0f, 0f);
+                                        Main.projectile[Num33].velocity.X = Main.rand.Next(-200, 201) * 0.1f;
+                                        Main.npc[Num33].velocity.Y = Main.rand.Next(-200, 201) * 0.02f;
+                                        Main.npc[Num33].netUpdate = true;
                                     }
                                 }
                             }
