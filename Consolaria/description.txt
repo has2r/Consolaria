@@ -4,6 +4,7 @@ Our aim is to bring this unique content back with improvents in both sprites and
 Content list:
 - Ocram comes back as a post-Mech boss with its own drops and new shiny Treasure Bag
 - New Ocram weapons and four armor sets: Dragon, Titan, Spectral and Warlock
+- special composed soundtrack for Ocram
 - Lepus and Turkor with classic and new unique drops
 - Improved boss AI and expert mode attacks
 - A bunch of ported exclusive pets
@@ -12,6 +13,7 @@ Content list:
 - Achievements based on Webmilio's Commons
 - Chinese New Year deleted content
 - Console exclusive vanity - including the Horned God set and many others
+- Japanese exclusive vanity
 - Holy Hand Grenade!
 
 Planned content:
@@ -20,6 +22,5 @@ Planned content:
 - Mobile exclusive pets - Grandma and others
 - Arch mobs comeback with many improvements!
 - Mc Moneypants NPC
-- Japanese exclusive sets
 
 Also check our WIP bigger project - Rise of Ages! Find its thread in WIP modding section on forums.

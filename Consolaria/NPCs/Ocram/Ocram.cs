@@ -600,7 +600,7 @@ namespace Consolaria.NPCs.Ocram
                     }
                 }
             }
-            if (Phase2 && Main.rand.Next(350) == 0)
+            if (Phase2 && Main.rand.Next(300) == 0)
             {
                 Vector2 Vector3 = new Vector2(npc.position.X + npc.width * 0.1f, npc.position.Y + npc.height * 0.1f);
                 if (Main.expertMode)
@@ -609,7 +609,7 @@ namespace Consolaria.NPCs.Ocram
                     {
                         if (Main.netMode != 1)
                         {
-                            for (int playerIndex = 0; playerIndex < 200; playerIndex++)
+                            for (int playerIndex = 0; playerIndex < 255; playerIndex++)
                             {
                                 if (Main.player[playerIndex].active)
                                 {
@@ -631,9 +631,9 @@ namespace Consolaria.NPCs.Ocram
                                         Velocity.X = Velocity.X + 2 * Main.rand.NextFloat() - 1.3f;
                                         if (Main.rand.Next(4) == 0)
                                         {
-                                            Projectile.NewProjectile(Spawn.X, Spawn.Y, Velocity.X, Velocity.Y, mod.ProjectileType("OcramSkull"), 28, 1f, Main.myPlayer, 0f, 0f); ;
+                                            Projectile.NewProjectile(Spawn.X, Spawn.Y, Velocity.X, Velocity.Y, mod.ProjectileType("OcramSkull"), 25, 1f, Main.myPlayer, 0f, 0f); ;
                                         }
-                                        int Num33 = Projectile.NewProjectile(Spawn.X, Spawn.Y, Velocity.X, Velocity.Y, mod.ProjectileType("OcramSkull"), 28, 1f, Main.myPlayer, 0f, 0f);
+                                        int Num33 = Projectile.NewProjectile(Spawn.X, Spawn.Y, Velocity.X, Velocity.Y, mod.ProjectileType("OcramSkull"), 25, 1f, Main.myPlayer, 0f, 0f);
                                         Main.projectile[Num33].velocity.X = Main.rand.Next(-200, 201) * 0.1f;
                                         Main.npc[Num33].velocity.Y = Main.rand.Next(-200, 201) * 0.02f;
                                         Main.npc[Num33].netUpdate = true;
