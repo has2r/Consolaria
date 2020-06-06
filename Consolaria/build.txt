@@ -1,6 +1,6 @@
 author = Hastur, Mr.Pigeon, DrunkenCat
 
-version = 1.2.3.1
+version = 1.2.3.2
 displayName = Consolaria
 homepage =  https://forums.terraria.org/index.php?threads/consolaria.62570/#post-1470388
 
@@ -13,4 +13,4 @@ buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*
 
 includePDB = true
 
-modReferences = WebmilioCommons
+
