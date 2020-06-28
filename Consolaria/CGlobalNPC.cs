@@ -75,7 +75,7 @@ namespace Consolaria
             {
                 Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ShirenHat"));
             }
-            if (player.GetModPlayer<CPlayer>().chocolateEgg && Main.rand.Next(4) == 0 && npc.netUpdate)
+            if (player.GetModPlayer<CPlayer>().chocolateEgg && npc.type != mod.NPCType("ChocolateEgg") && Main.rand.Next(2) == 0)
             {
                 NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("ChocolateEgg"));
                 npc.netUpdate = true;

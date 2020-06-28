@@ -41,9 +41,9 @@ namespace Consolaria.NPCs
         {
             npc.ai[0]++;
             player = Main.player[npc.target];
-            npc.TargetClosest(true);
+
             Vector2 playerPos = new Vector2(player.position.X, player.position.Y);
-            if (npc.ai[0] >= 240 + Main.rand.Next(0, 120))
+            if (npc.ai[0] >= 300 + Main.rand.Next(0, 180) && Vector2.Distance(npc.Center, player.Center) < 300f)
             {
                 for (int I = 0; I < 20; I++)
                 {

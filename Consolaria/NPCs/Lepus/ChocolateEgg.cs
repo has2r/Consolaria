@@ -6,17 +6,15 @@ namespace Consolaria.NPCs.Lepus
 {
     public class ChocolateEgg : ModNPC
     {
-        private int timer = 0;
-
         public override void SetDefaults()
         {
-            npc.width = 22;
-            npc.height = 27;
+            npc.width = 21;
+            npc.height = 26;
             npc.aiStyle = 0;
             npc.damage = 0;
-            npc.defense = 4;
-            npc.lifeMax = 50;
-            npc.HitSound = SoundID.NPCHit1;
+            npc.defense = 3;
+            npc.lifeMax = 30;
+            npc.HitSound = SoundID.NPCHit18;
             npc.DeathSound = SoundID.NPCDeath1;
             npc.knockBackResist = 0f;
             npc.noTileCollide = false;
@@ -39,38 +37,39 @@ namespace Consolaria.NPCs.Lepus
             npc.spriteDirection = 0;
             npc.velocity.X = 0f;
             npc.velocity.Y = 5f;
-            timer++;
-
-            if (timer >= 360)//will hatch after time
+        }
+        public override void UpdateLifeRegen(ref int damage)
+        {
+            if (npc.lifeRegen > 0)
             {
-                Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CHEGore"));
-                Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CHEGore"), -1f);
-                npc.active = false;
+                npc.lifeRegen = 0;
+            }
+            npc.lifeRegen -= 5;
+            if (damage < 1)
+            {
+                damage = 1;
             }
         }
-
         public override void HitEffect(int hitDirection, double damage)
         {
             if (npc.life <= 0)
             {
-                Main.PlaySound(2, (int)npc.position.X, (int)npc.position.Y, 10, 1f, 0f);
                 Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CHEGore"), 1f);
                 Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CHEGore"), -1f);
             }
         }
-
         public override void NPCLoot()
         {
             if (Main.rand.Next(2) == 0)
             {
                 Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Star);
             }
-            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Star);
-            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Heart);
             if (Main.rand.Next(2) == 0)
             {
                 Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Heart);
             }
+            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Star);
+            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Heart);
         }
     }
 }

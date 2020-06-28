@@ -14,13 +14,11 @@ namespace Consolaria.Items
             item.expert = true;
             item.accessory = true;                
         }
-
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Ostara's Gift");
             Tooltip.SetDefault("Enemies have a chance of leaving chocolate eggs on death" + "\nBroken eggs drop some life hearts and mana stars");
         }
-
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.GetModPlayer<CPlayer>().chocolateEgg = true;

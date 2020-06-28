@@ -12,6 +12,7 @@ namespace Consolaria.Projectiles
         {
             projectile.friendly = true;
             projectile.ranged = true;
+            projectile.arrow = true;
             projectile.width = 5;
             projectile.height = 5;
             projectile.aiStyle = 1;

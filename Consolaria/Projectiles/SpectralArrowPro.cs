@@ -14,6 +14,7 @@ namespace Consolaria.Projectiles
             projectile.penetrate = 2;
             projectile.tileCollide = true;
             projectile.ranged = true;
+            projectile.arrow = true;
             projectile.glowMask = GlowMask.SpectralArrow;
         }
         public override void AI()
