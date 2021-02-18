@@ -33,7 +33,7 @@ namespace Consolaria.Tiles
 			string item;
 			switch (style) {
 				case 0:
-					item = "ArchBanner";
+					item = "ArchWyvernBanner";
 					break;
 				case 1:
 					item = "DragonSnatcherBanner";
@@ -65,6 +65,9 @@ namespace Consolaria.Tiles
 				case 10:
 					item = "DragonHornetBanner";
 					break;
+				case 11:
+					item = "ArchDemonBanner";
+					break;
 				case 12:
 					item = "ShadowSlimeBanner";
 					break;
@@ -91,7 +94,7 @@ namespace Consolaria.Tiles
 				string type;
 				switch (style) {
 					case 0:
-						type = "ArchBanner";
+						type = "ArchWyvernBanner";
 						break;
 					case 1:
 						type = "DragonSnatcherBanner";
@@ -123,6 +126,9 @@ namespace Consolaria.Tiles
 					case 10:
 						type = "DragonHornetBanner";
 						break;
+					case 11:
+						type = "ArchDemonBanner";
+						break;
 					case 12:
 						type = "ShadowSlimeBanner";
 						break;
@@ -142,7 +148,6 @@ namespace Consolaria.Tiles
 				player.hasBanner = true;
 			}
 		}
-
 		public override void SetSpriteEffects(int i, int j, ref SpriteEffects spriteEffects)
 		{
 			if (i % 2 == 1)

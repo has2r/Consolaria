@@ -67,10 +67,6 @@ namespace Consolaria
             {
                 Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PetriDish"));
             }
-            if (npc.type == NPCID.ManEater && Main.rand.Next(30) == 0)
-            {
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Cabbage"));
-            }
             if (npc.type == NPCID.FireImp && Main.rand.Next(20) == 0)
             {
                 Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ShirenHat"));
@@ -91,7 +87,7 @@ namespace Consolaria
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CursedStuffing"));
                 }
             }
-            if ((npc.type == NPCID.CorruptBunny || npc.type == NPCID.CrimsonBunny) && Main.rand.Next(18) == 0)
+            if ((npc.type == NPCID.CorruptBunny || npc.type == NPCID.CrimsonBunny) && Main.rand.Next(16) == 0)
             {
                 if (Helper.Easter)
                 {

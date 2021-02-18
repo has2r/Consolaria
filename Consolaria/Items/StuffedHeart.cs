@@ -11,7 +11,7 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Stuffed Heart");
-            Tooltip.SetDefault("Summons Turkor the Ungrateful in multiplayer");
+            Tooltip.SetDefault("Summons Turkor the Ungrateful \nno Turkey Feather needed");
         }
 
         public override void SetDefaults()
@@ -42,13 +42,6 @@ namespace Consolaria.Items
             }
             return true;
         }
-
-      /*public override bool UseItem(Player player)
-        {
-            Main.PlaySound(SoundID.Roar, player.position, 0);
-            NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("TurkortheUngrateful"));
-            return true;
-        }*/
 
         public override void AddRecipes()
         {

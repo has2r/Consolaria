@@ -28,7 +28,6 @@ namespace Consolaria
             Helper.checkThanksgiving();
             Helper.checkEaster();
         }
-
         public override void PostSetupContent()
         {
             Mod fargos = ModLoader.GetMod("Fargowiltas");
@@ -65,7 +64,7 @@ namespace Consolaria
                     ModContent.ItemType<Items.CursedStuffing>(),
                     new List<int> { ModContent.ItemType<Items.Armor.TurkorMask>(), ModContent.ItemType<Items.TurkorTrophy>() },
                     new List<int> { ModContent.ItemType<Items.TurkorBag>(), ModContent.ItemType<Items.HornoPlenty>(), ModContent.ItemType<Items.GreatDrumstick>(), ModContent.ItemType<Items.SpicySauce>(), ModContent.ItemType<Items.FeatherStorm>(), ModContent.ItemType<Items.TurkeyStuff>(), ItemID.Feather },
-                    "Use a [i:" + ModContent.ItemType<Items.CursedStuffing>() + "] after summoning pet turkey",
+                    "Use a [i:" + ModContent.ItemType<Items.CursedStuffing>() + "] after summoning pet turkey or [i:" + ModContent.ItemType<Items.StuffedHeart>() + "]",
                     "Turkor the Ungrateful escapes from the dinner plate!"
                 );
                 bossChecklist.Call(

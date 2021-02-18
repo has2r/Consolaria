@@ -19,13 +19,13 @@ namespace Consolaria.Items
             DisplayName.SetDefault("White Thread");
             Tooltip.SetDefault("");
         }
-   /*     public override void AddRecipes()
+        public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.MoonglowSeeds, 3);
             recipe.AddTile(TileID.Loom);
             recipe.SetResult(this);
             recipe.AddRecipe();
-        }*/
+        }
     }
 }

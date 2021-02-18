@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "BQ4in88GOKNg6Hlxrk5NqoA3LeUQbbMHJLfJz36qa1dee0JERaqDBNUGA8KF8rxs/kR6yPmpgsn8HXJZscoRnA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Hastur\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Consolaria\\Consolaria.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Hastur\\.nuget\\packages\\tmodloader.codeassist\\0.1.1\\tmodloader.codeassist.0.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}
