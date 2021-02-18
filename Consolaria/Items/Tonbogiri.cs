@@ -10,9 +10,8 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Tonbogiri");
-            Tooltip.SetDefault("Has a chance to cause Spectral Flames");
+            Tooltip.SetDefault("Inflicts enemies with Acid Venom");
         }
-
         public override void SetDefaults()
         {
             item.damage = 55;
@@ -21,9 +20,9 @@ namespace Consolaria.Items
             item.noUseGraphic = true;
             item.melee = true;
             item.useTime = 15;
-            item.shoot = mod.ProjectileType("TonbogiriSpear");
-            item.shootSpeed = 7f;
             item.useAnimation = 15;
+            item.shoot = mod.ProjectileType("TonbogiriSpear");
+            item.shootSpeed = 8f;
             item.useStyle = 5;
             item.knockBack = 14;
             item.value = Item.sellPrice(0, 10, 0, 0);
@@ -32,7 +31,6 @@ namespace Consolaria.Items
             item.autoReuse = true;
             item.noMelee = true;
         }
-
         public override bool CanUseItem(Player player)
         {
             return player.ownedProjectileCounts[item.shoot] < 1;
@@ -40,10 +38,9 @@ namespace Consolaria.Items
 
         private float[] rads = new float[]
         {
-            0.7f,
-            -0.7f      
+            0.5f,
+            -0.5f      
         };
-
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             for (int i = 0; i < 2; i++)
@@ -59,7 +56,6 @@ namespace Consolaria.Items
             }
             return true;
         }
-      
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);

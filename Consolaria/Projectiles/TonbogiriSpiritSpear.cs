@@ -18,8 +18,7 @@ namespace Consolaria.Projectiles
 			projectile.melee = true;
 			projectile.scale = 1f;
 			projectile.damage = 30;
-		}
-					
+		}			
 		public float movementFactor
 		{
 			get
@@ -30,14 +29,11 @@ namespace Consolaria.Projectiles
 			{
 				projectile.ai[0] = value;
 			}
-		}
-
-		
+		}	
 		public override Color? GetAlpha(Color lightColor)
 		{
 			return new Color?(Color.White * ((255 - projectile.alpha) / 255f));
-		}
-		
+		}	
 		public override void AI()
 		{
             int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 68, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 136, default(Color), 1.2f);
@@ -70,10 +66,9 @@ namespace Consolaria.Projectiles
 				projectile.rotation -= MathHelper.ToRadians(90f);
 			}
 		}
-		
 		public override void Kill(int timeLeft)
 		{
-            int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 68, projectile.oldVelocity.X * 0.1f, projectile.oldVelocity.Y * 0.1f);
+            Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 68, projectile.oldVelocity.X * 0.1f, projectile.oldVelocity.Y * 0.1f);
         }
 	}
 }
