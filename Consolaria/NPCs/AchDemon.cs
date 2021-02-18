@@ -82,6 +82,16 @@ namespace Consolaria.NPCs
 				}
 			}
 		}
+		public override void NPCLoot()
+		{
+			if (Main.netMode != 1)
+			{
+				if (Main.rand.Next(12) == 0) // 8%
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ArchDemonMask"));
+				}
+			}
+		}
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
 			int x = spawnInfo.spawnTileX;

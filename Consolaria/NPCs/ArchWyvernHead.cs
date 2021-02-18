@@ -297,7 +297,14 @@ namespace Consolaria.NPCs
 		}
 		public override void NPCLoot()
 		{
-			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 575, Main.rand.Next(5, 20));
+			if (Main.netMode != 1)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 575, Main.rand.Next(5, 20));
+				if (Main.rand.Next(12) == 0) // 8%
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ArchWyvernMask"));
+				}
+			}
 		}
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
