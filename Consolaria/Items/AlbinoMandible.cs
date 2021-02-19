@@ -13,7 +13,7 @@ namespace Consolaria.Items
 			item.height = 16;
 			item.maxStack = 1;
 			item.useStyle = 1;
-			item.ranged = true;
+			item.melee = true;
 			item.noUseGraphic = true;
 			item.rare = 2;
 			item.UseSound = SoundID.Item1;

@@ -19,7 +19,7 @@ namespace Consolaria.NPCs
 			npc.aiStyle = 6;
 			npc.damage = 70;
 			npc.defense = 40;
-			npc.lifeMax = 8000;
+			npc.lifeMax = 3000;
 			npc.noGravity = true;
 			npc.noTileCollide = true;
 			npc.HitSound = SoundID.NPCHit7;
@@ -66,6 +66,16 @@ namespace Consolaria.NPCs
 			spriteBatch.Draw(Main.npcTexture[npc.type], new Vector2(npc.position.X - Main.screenPosition.X + (float)(npc.width / 2) - (float)Main.npcTexture[npc.type].Width * npc.scale / 2f + origin.X * npc.scale, npc.position.Y - Main.screenPosition.Y + (float)npc.height - (float)Main.npcTexture[npc.type].Height * npc.scale / (float)Main.npcFrameCount[npc.type] + 4f + origin.Y * npc.scale + 56f), new Rectangle?(npc.frame), alpha, npc.rotation, origin, npc.scale, effects, 0f);
 			npc.alpha = 255;
 			return true;
+		}
+		public override void HitEffect(int hitDirection, double damage)
+		{
+			if (npc.life <= 0)
+			{
+				for (int i = 0; i < 4; i++)
+				{
+					Gore.NewGore(npc.position, Vector2.Zero, Main.rand.Next(61, 64), 1f);
+				}
+			}
 		}
 	}
 }

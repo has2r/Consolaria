@@ -21,13 +21,13 @@ namespace Consolaria.Items
             Tooltip.SetDefault("");
         }
 
-        public override void AddRecipes()
+        /*public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.DeathweedSeeds, 3);
             recipe.AddTile(TileID.Loom);
             recipe.SetResult(this);
             recipe.AddRecipe();
-        }
+        }*/
     }
 }

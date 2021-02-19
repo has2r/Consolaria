@@ -13,10 +13,9 @@ namespace Consolaria.Projectiles
 			projectile.height = 8;
 			projectile.timeLeft = 100;
 			projectile.alpha = 30;
-			projectile.penetrate = 1;
-			projectile.friendly = true;
+			projectile.penetrate = -1;
+			projectile.hostile = true;
 			projectile.tileCollide = true;
-			projectile.damage = 1;
 		}
 		public override bool PreAI()
 		{
@@ -29,8 +28,8 @@ namespace Consolaria.Projectiles
 			}
 			return true;
 		}
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-		{
+		public override void OnHitPlayer(Player target, int damage, bool crit)
+        {
 			target.AddBuff(BuffID.OnFire, 180);
 		}
 	}

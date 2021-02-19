@@ -12,6 +12,7 @@ namespace Consolaria.NPCs
 		bool initiate = false;
 		public int TimerHeal = 0;
 		public float TimerAnim = 0;
+		private int TimerShoot = 0;
 
 		public override void SetStaticDefaults()
 		{
@@ -24,7 +25,7 @@ namespace Consolaria.NPCs
 			npc.aiStyle = 6;
 			npc.damage = 90;
 			npc.defense = 30;
-			npc.lifeMax = 8000;
+			npc.lifeMax = 2000;
 			npc.noGravity = true;
 			npc.noTileCollide = true;
 			npc.HitSound = SoundID.NPCHit7;
@@ -52,6 +53,15 @@ namespace Consolaria.NPCs
 			{
 				npc.timeLeft = 300;
 			}
+			
+			TimerShoot++;
+			if (TimerShoot >= 50 && TimerShoot % 5 == 0)
+			{
+				Projectile.NewProjectile(npc.Center.X + 5, npc.Center.Y, npc.velocity.X * 2f, npc.velocity.Y * 2f, mod.ProjectileType("ArchFlame"), npc.damage / 2, 4f, 255, 0f, 0f);
+				Main.PlaySound(SoundID.Item20, npc.position);
+			}
+			if (TimerShoot == 70)
+			TimerShoot = 0;
 
 			if (Main.netMode != NetmodeID.MultiplayerClient)
 			{
@@ -295,6 +305,16 @@ namespace Consolaria.NPCs
 			npc.alpha = 255;
 			return true;
 		}
+		public override void HitEffect(int hitDirection, double damage)
+		{
+			if (npc.life <= 0)
+			{
+				for (int i = 0; i < 4; i++)
+				{
+					Gore.NewGore(npc.position, Vector2.Zero, Main.rand.Next(61, 64), 1f);
+				}
+			}
+		}
 		public override void NPCLoot()
 		{
 			if (Main.netMode != 1)
@@ -304,7 +324,7 @@ namespace Consolaria.NPCs
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ArchWyvernMask"));
 				}
-			}
+			} 
 		}
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{

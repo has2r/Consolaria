@@ -22,7 +22,7 @@ namespace Consolaria.Items
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.MoonglowSeeds, 3);
+            recipe.AddIngredient(ItemID.MushroomGrassSeeds, 3);
             recipe.AddTile(TileID.Loom);
             recipe.SetResult(this);
             recipe.AddRecipe();

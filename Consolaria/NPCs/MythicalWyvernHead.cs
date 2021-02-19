@@ -298,6 +298,16 @@ namespace Consolaria.NPCs
 			npc.alpha = 255;
 			return true;
 		}
+		public override void HitEffect(int hitDirection, double damage)
+		{
+			if (npc.life <= 0)
+			{
+				for (int i = 0; i < 4; i++)
+				{
+					Gore.NewGore(npc.position, Vector2.Zero, Main.rand.Next(61, 64), 1f);
+				}
+			}
+		}
 		public override void NPCLoot()
 		{
 			if (Main.netMode != 1)

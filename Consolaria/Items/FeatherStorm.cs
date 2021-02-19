@@ -31,6 +31,8 @@ namespace Consolaria.Items
             item.value = Item.sellPrice(0, 5, 0, 0);
             item.shoot = mod.ProjectileType("Feather");
             item.shootSpeed = 6f;
+			item.noMelee = true;
+			item.scale = 0.9f;
         }
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
@@ -58,5 +60,9 @@ namespace Consolaria.Items
             }
             return false;
         }
+		public override Vector2? HoldoutOffset()
+		{
+			return new Vector2(2, 0);
+		}
     }
 }
