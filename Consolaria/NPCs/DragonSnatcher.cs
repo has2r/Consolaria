@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
@@ -10,7 +10,6 @@ namespace Consolaria.NPCs
 	public class DragonSnatcher : ModNPC
 	{
 		private int timer = 0;
-		private int shootTimer = 0;
 		private bool spawn = false;
 		private float PosX = 0f;
 		private float PosY = 0f;
@@ -86,10 +85,6 @@ namespace Consolaria.NPCs
 				PosX = Main.player[npc.target].position.X;
 				PosY = Main.player[npc.target].position.Y;
 			}
-
-			Vector2 vector = Main.player[npc.target].Center + new Vector2(npc.Center.X, npc.Center.Y);
-			Vector2 vector2 = npc.Center + new Vector2(npc.Center.X, npc.Center.Y);
-			shootTimer++;
 			if (timer % 100 == 0)
 			{
 				for (int p = 0; p < 3; ++p)
@@ -116,17 +111,17 @@ namespace Consolaria.NPCs
 		}
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Vector2 vector9 = new Vector2(npc.position.X + (float)(npc.width / 2), npc.position.Y + (float)(npc.height / 2));
+			Vector2 vector9 = new Vector2(npc.position.X + (npc.width / 2), npc.position.Y + (npc.height / 2));
 			float num36 = npc.ai[1] - vector9.X;
 			float num37 = npc.ai[2] - vector9.Y;
-			float num38 = (float)Math.Atan2((double)num37, (double)num36) - 1.57f;
-			float rotate = (float)Math.Atan2((double)num37, (double)num36) - 3.14f;
+			float num38 = (float)Math.Atan2(num37, num36) - 1.57f;
+			float rotate = (float)Math.Atan2(num37, num36) - 3.14f;
 			npc.rotation = rotate;
 			bool flag9 = true;
 			while (flag9)
 			{
 				int height2 = 28;
-				float num39 = (float)Math.Sqrt((double)(num36 * num36 + num37 * num37));
+				float num39 = (float)Math.Sqrt((num36 * num36 + num37 * num37));
 				if (num39 < 20f)
 				{
 					height2 = (int)num39 - 20 + 12;
@@ -140,13 +135,13 @@ namespace Consolaria.NPCs
 				num36 = npc.ai[1] - vector9.X;
 				num37 = npc.ai[2] - vector9.Y;
 				Color color9 = Lighting.GetColor((int)vector9.X / 16, (int)(vector9.Y / 16f));
-				spriteBatch.Draw(Main.chain4Texture, new Vector2(vector9.X - Main.screenPosition.X, vector9.Y - Main.screenPosition.Y), new Rectangle?(new Rectangle(0, 0, Main.chain4Texture.Width, height2)), color9, num38, new Vector2((float)Main.chain4Texture.Width * 0.5f, (float)Main.chain4Texture.Height * 0.5f), 1f, SpriteEffects.None, 0f);
+				spriteBatch.Draw(mod.GetTexture("Gores/DragonSnatcher_Chain"), new Vector2(vector9.X - Main.screenPosition.X, vector9.Y - Main.screenPosition.Y), new Rectangle?(new Rectangle(0, 0, mod.GetTexture("Gores/DragonSnatcher_Chain").Width, height2)), color9, num38, new Vector2(mod.GetTexture("Gores/DragonSnatcher_Chain").Width * 0.5f, mod.GetTexture("Gores/DragonSnatcher_Chain").Height * 0.5f), 1f, SpriteEffects.None, 0f);
 			}
 			return true;
 		}
 		public override void NPCLoot()
 		{
-			if (Main.netMode != 1)
+			if (Main.netMode != NetmodeID.MultiplayerClient)
 			{
 				if (Main.rand.Next(10) == 1)
 				{

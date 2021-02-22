@@ -1,3 +1,6 @@
+1.2.3.5:
+- Fixed game crashing issue caused by Dragon Snatcher spawn in Jungle
+
 1.2.3.4:
 
 - Added Arch Wyvern and Arch Demon
