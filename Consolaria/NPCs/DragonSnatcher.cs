@@ -10,7 +10,6 @@ namespace Consolaria.NPCs
 	public class DragonSnatcher : ModNPC
 	{
 		private int timer = 0;
-		private int shootTimer = 0;
 		private bool spawn = false;
 		private float PosX = 0f;
 		private float PosY = 0f;
@@ -89,7 +88,6 @@ namespace Consolaria.NPCs
 
 			Vector2 vector = Main.player[npc.target].Center + new Vector2(npc.Center.X, npc.Center.Y);
 			Vector2 vector2 = npc.Center + new Vector2(npc.Center.X, npc.Center.Y);
-			shootTimer++;
 			if (timer % 100 == 0)
 			{
 				for (int p = 0; p < 3; ++p)
