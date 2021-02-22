@@ -1,5 +1,5 @@
 author = Hastur, Mr.Pigeon, DrunkenCat
-version = 1.2.3.4
+version = 1.2.3.5
 displayName = Consolaria
 homepage =  https://forums.terraria.org/index.php?threads/consolaria.62570/#post-1470388
 

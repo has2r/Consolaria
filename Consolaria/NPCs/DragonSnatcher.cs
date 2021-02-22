@@ -9,6 +9,11 @@ namespace Consolaria.NPCs
 {
 	public class DragonSnatcher : ModNPC
 	{
+		private int timer = 0;
+		private int shootTimer = 0;
+		private bool spawn = false;
+		private float PosX = 0f;
+		private float PosY = 0f;
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Dragon Snatcher");
@@ -28,7 +33,6 @@ namespace Consolaria.NPCs
 			npc.knockBackResist = 0f;
 			npc.noTileCollide = true;
 			npc.noGravity = true;
-			npc.behindTiles = true;
 			npc.value = Item.buyPrice(0, 0, 0, 65);
 			npc.buffImmune[20] = true;
 			banner = npc.type;
@@ -56,12 +60,6 @@ namespace Consolaria.NPCs
 				}
 			}
 		}
-
-		int timer = 0;
-		bool spawn = false;
-		float PosX = 0f;
-		float PosY = 0f;
-
 		public override void AI()
 		{
 			timer++;
@@ -88,15 +86,17 @@ namespace Consolaria.NPCs
 				PosX = Main.player[npc.target].position.X;
 				PosY = Main.player[npc.target].position.Y;
 			}
-			Vector2 velocity = Vector2.Normalize(Main.player[npc.target].Center - npc.Center) * 5;
+
+			Vector2 vector = Main.player[npc.target].Center + new Vector2(npc.Center.X, npc.Center.Y);
+			Vector2 vector2 = npc.Center + new Vector2(npc.Center.X, npc.Center.Y);
+			shootTimer++;
 			if (timer % 100 == 0)
 			{
-				for (int p = 0; p < 2; ++i)
+				for (int p = 0; p < 3; ++p)
 				{
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, velocity.X + Main.rand.Next(-5, 6), velocity.Y + Main.rand.Next(-5, 6), ProjectileID.JungleSpike, npc.damage / 2, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, Main.rand.Next(-3, 3), -3, ProjectileID.JungleSpike, (int)(npc.damage / 4), 1, Main.myPlayer, 0, 0);
 				}
 			}
-
 			if (PosX < npc.position.X)
 			{
 				if (npc.velocity.X > -2) { npc.velocity.X -= 0.2f; }
