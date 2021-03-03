@@ -1,0 +1,230 @@
+﻿using System;
+using Terraria;
+using Terraria.ModLoader;
+using Terraria.ID;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+
+namespace Consolaria.NPCs
+{
+	public class SnetchBase : ModNPC
+	{
+		public override string Texture => "Consolaria/NPCs/Snetch";
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Dragon Snatcher");
+		}
+		private Player player;
+		private float speed;
+		public override void SetDefaults()
+		{
+			npc.width = 30;
+			npc.height = 30;
+			npc.aiStyle = -1;
+			Main.npcFrameCount[npc.type] = 1;
+			npc.damage = 0;
+			npc.defense = 8;
+			npc.lifeMax = 200;
+			npc.dontTakeDamage = false;
+			npc.HitSound = SoundID.NPCHit1;
+			npc.DeathSound = SoundID.NPCDeath1;
+			npc.knockBackResist = 0f;
+			npc.noTileCollide = true;
+			npc.noGravity = true;
+			npc.alpha = 255;
+			npc.value = Item.buyPrice(0, 0, 0, 75);
+			npc.dontTakeDamage = true;
+		}
+		public override float SpawnChance(NPCSpawnInfo spawnInfo)
+		{
+			return SpawnCondition.UndergroundJungle.Chance * 0.05f;
+		}
+		int timer = 0;
+		bool appear = false;
+		bool spawn = false;
+		float worldY = 0.0f;
+		float PosX = 0f;
+		float PosY = 0f;
+		public override void AI()
+		{
+			npc.TargetClosest(true);
+			if (!spawn)
+			{
+				int a = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("Snetch"), npc.whoAmI);
+				Main.npc[a].realLife = npc.whoAmI;
+				Main.npc[a].ai[1] = npc.whoAmI;
+				spawn = true;
+			}
+		}
+	}
+}
+
+namespace Consolaria.NPCs
+{
+	public class Snetch : ModNPC
+	{
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Dragon Snatcher");
+		}
+		private Player player;
+		private float speed;
+		public override void SetDefaults()
+		{
+			npc.width = 30;
+			npc.height = 30;
+			npc.aiStyle = -1;
+			Main.npcFrameCount[npc.type] = 3;
+			npc.damage = 20;
+			npc.defense = 8;
+			npc.lifeMax = 200;
+			npc.dontTakeDamage = false;
+			npc.HitSound = SoundID.NPCHit1;
+			npc.DeathSound = SoundID.NPCDeath1;
+			npc.knockBackResist = 0f;
+			npc.noTileCollide = true;
+			npc.noGravity = true;
+			npc.value = Item.buyPrice(0, 0, 0, 75);
+			banner = npc.type;
+			bannerItem = mod.ItemType("ArchDemonBanner");
+		}
+
+		public override void FindFrame(int frameHeight)
+		{
+			npc.frameCounter += 0.15f;
+			npc.frameCounter %= Main.npcFrameCount[npc.type];
+			int frame = (int)npc.frameCounter;
+			npc.frame.Y = frame * frameHeight;
+		}
+		public override void NPCLoot()
+		{
+			if (Main.netMode != NetmodeID.MultiplayerClient)
+			{
+				if (Main.rand.Next(10) == 1)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Cabbage"));
+				}
+			}
+		}
+		public override void HitEffect(int hitDirection, double damage)
+		{
+			if (npc.life <= 0)
+			{
+				for (int j = 0; j < 20; ++j)
+				{
+					Dust.NewDust(npc.position + npc.velocity, npc.width, npc.height, 5, 0f, 2f);
+				}
+				Gore.NewGore(npc.position, npc.velocity, 70, 1f);
+				for (int i = 0; i < 2; ++i)
+				{
+					Gore.NewGore(npc.position, npc.velocity, 72, 1f);
+				}
+			}
+		}
+
+		int timer = 0;
+
+		public override void AI()
+		{
+			npc.TargetClosest(true);
+
+			if (!Main.npc[(int)npc.ai[1]].active && Main.npc[(int)npc.ai[1]].type == mod.NPCType("SnetchBase"))
+			{
+				npc.life = 0;
+				npc.HitEffect(0, 10.0);
+				npc.active = false;
+			}
+
+			if (npc.Distance(Main.player[npc.target].Center) <= 350 && !Main.player[npc.target].dead)
+			{
+				timer++;
+			}
+			else if (npc.Distance(Main.player[npc.target].Center) >= 350 && !Main.player[npc.target].dead || Main.player[npc.target].dead)
+			{
+				if (timer <= 160)
+				{
+					timer = 0;
+				}
+				else if (timer >= 160)
+				{
+					timer++;
+				}
+			}
+
+			if (timer <= 160)
+			{
+				if (Main.npc[(int)npc.ai[1]].active && Main.npc[(int)npc.ai[1]].type == mod.NPCType("SnetchBase"))
+				{
+					Vector2 vector90 = new Vector2(npc.Center.X, npc.Center.Y);
+					float num757 = Main.npc[(int)npc.ai[1]].Center.X - vector90.X;
+					float num758 = Main.npc[(int)npc.ai[1]].Center.Y - vector90.Y;
+					npc.velocity.X = num757;
+					npc.velocity.Y = num758;
+				}
+				npc.rotation = (float)Math.Atan2(Main.player[npc.target].Center.Y - (double)npc.Center.Y, Main.player[npc.target].Center.X - (double)npc.Center.X) + 3.14f;
+			}
+
+			if (timer >= 160 && timer <= 160)
+			{
+				Main.PlaySound(29, (int)npc.Center.X, (int)npc.Center.Y, 7);
+				npc.velocity.X *= 0.98f;
+				npc.velocity.Y *= 0.98f;
+				Vector2 vector8 = new Vector2(npc.position.X + (npc.width * 0.5f), npc.position.Y + (npc.height * 0.5f));
+				{
+					float rotation0 = (float)Math.Atan2((vector8.Y) - (Main.player[npc.target].position.Y + (Main.player[npc.target].height * 0.5f)), (vector8.X) - (Main.player[npc.target].position.X + (Main.player[npc.target].width * 0.5f)));
+					npc.velocity.X = (float)(Math.Cos(rotation0) * 16) * -1;
+					npc.velocity.Y = (float)(Math.Sin(rotation0) * 16) * -1;
+				}
+				npc.rotation = (float)Math.Atan2((double)npc.velocity.Y, (double)npc.velocity.X) + 3.14f;
+			}
+
+			if (timer >= 180)
+			{
+				npc.velocity.X *= 0.98f;
+				npc.velocity.Y *= 0.98f;
+				Vector2 vector8 = new Vector2(npc.position.X + (npc.width * 0.5f), npc.position.Y + (npc.height * 0.5f));
+				{
+					float rotation0 = (float)Math.Atan2((vector8.Y) - (Main.npc[(int)npc.ai[1]].position.Y + (Main.npc[(int)npc.ai[1]].height * 0.5f)), (vector8.X) - (Main.npc[(int)npc.ai[1]].position.X + (Main.npc[(int)npc.ai[1]].width * 0.5f)));
+					npc.velocity.X = (float)(Math.Cos(rotation0) * 16) * -1;
+					npc.velocity.Y = (float)(Math.Sin(rotation0) * 16) * -1;
+				}
+				if (Main.npc[(int)npc.ai[1]].Hitbox.Intersects(npc.Hitbox))
+				{
+					timer = 0;
+					npc.velocity = Vector2.Zero;
+				}
+			}
+		}
+		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		{
+			Vector2 vector7 = new Vector2(npc.Center.X, npc.Center.Y);
+			float num29 = Main.npc[(int)npc.ai[1]].Center.X - vector7.X;
+			float num30 = Main.npc[(int)npc.ai[1]].Center.Y - vector7.Y;
+
+			float rotation7 = (float)Math.Atan2((double)num30, (double)num29) - 1.57f;
+			bool flag8 = true;
+			while (flag8)
+			{
+				float num31 = (float)Math.Sqrt((double)(num29 * num29 + num30 * num30));
+				if (num31 < 16f)
+				{
+					flag8 = false;
+				}
+				else
+				{
+					num31 = 16f / num31;
+					num29 *= num31;
+					num30 *= num31;
+					vector7.X += num29;
+					vector7.Y += num30;
+					num29 = Main.npc[(int)npc.ai[1]].Center.X - vector7.X;
+					num30 = Main.npc[(int)npc.ai[1]].Center.Y - vector7.Y;
+
+					Color color7 = Lighting.GetColor((int)vector7.X / 16, (int)(vector7.Y / 16f));
+					Main.spriteBatch.Draw(mod.GetTexture("Gores/DragonSnatcher_Chain"), new Vector2(vector7.X - Main.screenPosition.X, vector7.Y - Main.screenPosition.Y), new Rectangle?(new Rectangle(0, 0, mod.GetTexture("Gores/DragonSnatcher_Chain").Width, Main.chain4Texture.Height)), color7, rotation7, new Vector2(mod.GetTexture("Gores/DragonSnatcher_Chain").Width * 0.5f, mod.GetTexture("Gores/DragonSnatcher_Chain").Height * 0.5f), 1f, SpriteEffects.None, 0f);
+				}
+			}
+			return true;
+		}
+	}
+}

@@ -10,7 +10,7 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Tonbogiri");
-            Tooltip.SetDefault("Inflicts enemies with Acid Venom");
+            Tooltip.SetDefault("A legendary Japanese spear coated in venom\n'Weakens in Underworld'");
         }
         public override void SetDefaults()
         {
@@ -26,7 +26,7 @@ namespace Consolaria.Items
             item.useStyle = 5;
             item.knockBack = 14;
             item.value = Item.sellPrice(0, 10, 0, 0);
-            item.rare = 7;
+            item.rare = ItemRarityID.Lime;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
             item.noMelee = true;
@@ -36,7 +36,7 @@ namespace Consolaria.Items
             return player.ownedProjectileCounts[item.shoot] < 1;
         }
 
-        private float[] rads = new float[]
+        private readonly float[] rads = new float[]
         {
             0.5f,
             -0.5f      
@@ -51,7 +51,7 @@ namespace Consolaria.Items
                     ai = 0.5f;
                 }
                 Vector2 vector = new Vector2(speedX, speedY);
-                vector = vector.RotatedBy(rads[i], default(Vector2));
+                vector = vector.RotatedBy(rads[i], default);
                 Projectile.NewProjectile(player.position * 1.2f, vector, mod.ProjectileType("TonbogiriSpiritSpear"), damage, knockBack, player.whoAmI, 0f, ai);
             }
             return true;

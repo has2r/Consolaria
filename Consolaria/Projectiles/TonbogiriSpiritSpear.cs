@@ -4,22 +4,22 @@ using Terraria;
 using Terraria.ModLoader;
 
 namespace Consolaria.Projectiles
-{	
+{
 	internal class TonbogiriSpiritSpear : ModProjectile
-	{	
+	{
 		public override void SetDefaults()
 		{
 			projectile.width = 20;
 			projectile.height = 20;
-		    projectile.aiStyle = 19;
+			projectile.aiStyle = 19;
 			projectile.friendly = true;
 			projectile.penetrate = -1;
 			projectile.tileCollide = false;
 			projectile.melee = true;
 			projectile.scale = 1f;
 			projectile.damage = 30;
-		}			
-		public float movementFactor
+		}
+		public float MovementFactor
 		{
 			get
 			{
@@ -29,16 +29,16 @@ namespace Consolaria.Projectiles
 			{
 				projectile.ai[0] = value;
 			}
-		}	
+		}
 		public override Color? GetAlpha(Color lightColor)
 		{
 			return new Color?(Color.White * ((255 - projectile.alpha) / 255f));
-		}	
+		}
 		public override void AI()
 		{
-            int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 68, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 136, default(Color), 1.2f);
-            Main.dust[dust].noGravity = true;
-            projectile.scale =projectile.ai[1];
+			int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 68, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 136, default(Color), 1.2f);
+			Main.dust[dust].noGravity = true;
+			projectile.scale = projectile.ai[1];
 			Player player = Main.player[projectile.owner];
 			Vector2 vector = player.RotatedRelativePoint(player.MountedCenter, true);
 			projectile.direction = player.direction;
@@ -46,20 +46,13 @@ namespace Consolaria.Projectiles
 			player.itemTime = player.itemAnimation;
 			projectile.position.X = vector.X - (projectile.width / 2);
 			projectile.position.Y = vector.Y - (projectile.height / 2);
-			if (!player.frozen)
+			if (MovementFactor == 0f)
 			{
-				if (movementFactor == 0f)
-				{
-					movementFactor = 3f;
-					projectile.netUpdate = true;
-				}
-				movementFactor -= ((player.itemAnimation < player.itemAnimationMax / 4) ? 1.5f : -1.5f);
+				MovementFactor = 3f;
+				projectile.netUpdate = true;
 			}
-			projectile.position += projectile.velocity * movementFactor;
-			if (player.itemAnimation == 0)
-			{
-				projectile.Kill();
-			}
+			MovementFactor -= ((player.itemAnimation < player.itemAnimationMax / 4) ? 1.5f : -1.5f);
+			projectile.position += projectile.velocity * MovementFactor;
 			projectile.rotation = (float)Math.Atan2(projectile.velocity.Y, projectile.velocity.X) + MathHelper.ToRadians(135f);
 			if (projectile.spriteDirection == -1)
 			{
@@ -68,7 +61,7 @@ namespace Consolaria.Projectiles
 		}
 		public override void Kill(int timeLeft)
 		{
-            Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 68, projectile.oldVelocity.X * 0.1f, projectile.oldVelocity.Y * 0.1f);
-        }
+			Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 68, projectile.oldVelocity.X * 0.1f, projectile.oldVelocity.Y * 0.1f);
+		}
 	}
 }
