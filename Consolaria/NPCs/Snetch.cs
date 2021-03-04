@@ -33,7 +33,7 @@ namespace Consolaria.NPCs
 			npc.noGravity = true;
 			npc.alpha = 255;
 			npc.value = Item.buyPrice(0, 0, 0, 75);
-			npc.dontTakeDamage = true;
+		//	npc.dontTakeDamage = true;
 		}
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{

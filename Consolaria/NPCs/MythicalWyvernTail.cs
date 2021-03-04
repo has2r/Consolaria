@@ -54,20 +54,20 @@ namespace Consolaria.NPCs
 				npc.HitEffect(0, 10.0);
 				npc.active = false;
 			}
-		/*	if (npc.position.X > Main.npc[(int)npc.ai[1]].position.X)
+			if (npc.position.X > Main.npc[(int)npc.ai[1]].position.X)
 			{
 				npc.spriteDirection = 1;
 			}
 			if (npc.position.X < Main.npc[(int)npc.ai[1]].position.X)
 			{
 				npc.spriteDirection = -1;
-			}*/
+			}
 		}
 		
 		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
 		{
 			Vector2 origin = new Vector2((float)(Main.npcTexture[npc.type].Width / 2), (float)(Main.npcTexture[npc.type].Height / Main.npcFrameCount[npc.type] / 2));
-			Color alpha = Color.White;
+			Color alpha = drawColor;
 			SpriteEffects effects = SpriteEffects.None;
 			if (npc.spriteDirection == 1)
 			{

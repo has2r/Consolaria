@@ -68,7 +68,7 @@ namespace Consolaria.NPCs
 		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
 		{
 			Vector2 origin = new Vector2((float)(Main.npcTexture[npc.type].Width / 2), (float)(Main.npcTexture[npc.type].Height / Main.npcFrameCount[npc.type] / 2));
-			Color alpha = Color.White;
+			Color alpha = drawColor;
 			SpriteEffects effects = SpriteEffects.None;
 			if (npc.spriteDirection == 1)
 			{
