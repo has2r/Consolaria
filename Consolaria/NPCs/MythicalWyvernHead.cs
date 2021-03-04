@@ -35,6 +35,7 @@ namespace Consolaria.NPCs
 			npc.buffImmune[46] = true;
 			npc.buffImmune[47] = true;
 			npc.buffImmune[67] = true;
+			npc.buffImmune[mod.BuffType("HotSauce")] = true;
 		}
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
 		{

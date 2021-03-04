@@ -84,9 +84,9 @@ namespace Consolaria.NPCs
 			npc.knockBackResist = 0f;
 			npc.noTileCollide = true;
 			npc.noGravity = true;
-			npc.value = Item.buyPrice(0, 0, 0, 75);
+			npc.value = Item.buyPrice(0, 0, 1, 0);
 			banner = npc.type;
-			bannerItem = mod.ItemType("ArchDemonBanner");
+			bannerItem = mod.ItemType("DragonSnatcherBanner");
 		}
 
 		public override void FindFrame(int frameHeight)

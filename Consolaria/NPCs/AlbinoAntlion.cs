@@ -37,7 +37,6 @@ namespace Consolaria.NPCs
 			npc.lifeMax = npc.lifeMax * 1;
 			npc.damage = npc.damage * 1;
 		}
-
         public override void HitEffect(int hitDirection, double damage)
 		{
 			if (npc.life <= 0)
@@ -49,7 +48,6 @@ namespace Consolaria.NPCs
 				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/Gore_488"), 1f);
             }
 		}
-
         public override void PostDraw(SpriteBatch spriteBatch, Color lightColor)
         {
             Texture2D drawTexture = mod.GetTexture("NPCs/AlbinoAntlionBody");
@@ -62,24 +60,26 @@ namespace Consolaria.NPCs
             SpriteEffects effects = npc.spriteDirection == -1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
             spriteBatch.Draw(drawTexture, drawPos, npc.frame, Color.White, 0f, origin, npc.scale, effects, 0);
         }
-
         public override Color? GetAlpha(Color lightColor)
         {
             return Color.White;
         }
-
         public override void NPCLoot()
 		{
-            if (Main.netMode != 1)
+            if (Main.netMode != NetmodeID.MultiplayerClient)
             {
-                int centerX = (int)(npc.position.X + npc.width / 2) / 16;
-                int centerY = (int)(npc.position.Y + npc.height / 2) / 16;
-                int halfLength = npc.width / 2 / 16 + 1;
                 if (Main.rand.Next(10) == 1)
                 {
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("AlbinoMandible"));
                 }
             }
-        }   
-    }
+        }
+		public override float SpawnChance(NPCSpawnInfo spawnInfo)
+		{
+
+			if (Main.tileSand[spawnInfo.spawnTileType])
+				return SpawnCondition.OverworldDayDesert.Chance * 0.05f;
+			return 0;
+		}
+	}
 }
