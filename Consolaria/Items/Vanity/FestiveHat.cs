@@ -21,7 +21,7 @@ namespace Consolaria.Items.Vanity
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Festive top hat");
+            DisplayName.SetDefault("Festive Top Hat");
             Tooltip.SetDefault("");
         }       
     }

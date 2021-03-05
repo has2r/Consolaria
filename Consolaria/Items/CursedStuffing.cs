@@ -11,7 +11,7 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Cursed Stuffing");
-            Tooltip.SetDefault("It pulses with malevolent energy, summon Turkor the Ungrateful" + "\nPet turkey must be with you");
+            Tooltip.SetDefault("It pulses with malevolent energy" + "\nSummons Turkor the Ungrateful" + "\nPet turkey must be with you");
         }
 
         public override void SetDefaults()

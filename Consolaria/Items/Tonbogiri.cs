@@ -10,7 +10,7 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Tonbogiri");
-            Tooltip.SetDefault("A legendary Japanese spear coated in venom\n'Weakens in Underworld'");
+            Tooltip.SetDefault("A legendary Japanese spear coated in venom\nWeakens in Underworld");
         }
         public override void SetDefaults()
         {

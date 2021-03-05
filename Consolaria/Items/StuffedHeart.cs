@@ -11,7 +11,7 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Stuffed Heart");
-            Tooltip.SetDefault("Summons Turkor the Ungrateful \nno Turkey Feather needed");
+            Tooltip.SetDefault("Summons Turkor the Ungrateful \nNo Turkey Feather needed");
         }
 
         public override void SetDefaults()

@@ -23,9 +23,8 @@ namespace Consolaria.NPCs
 			npc.aiStyle = -1;
 			Main.npcFrameCount[npc.type] = 1;
 			npc.damage = 0;
-			npc.defense = 8;
-			npc.lifeMax = 200;
-			npc.dontTakeDamage = false;
+			npc.defense = 10;
+			npc.lifeMax = 80;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.knockBackResist = 0f;
@@ -33,7 +32,7 @@ namespace Consolaria.NPCs
 			npc.noGravity = true;
 			npc.alpha = 255;
 			npc.value = Item.buyPrice(0, 0, 0, 75);
-		//	npc.dontTakeDamage = true;
+			npc.dontTakeDamage = true;
 		}
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
@@ -75,9 +74,9 @@ namespace Consolaria.NPCs
 			npc.height = 30;
 			npc.aiStyle = -1;
 			Main.npcFrameCount[npc.type] = 3;
-			npc.damage = 20;
-			npc.defense = 8;
-			npc.lifeMax = 200;
+			npc.damage = 30;
+			npc.defense = 10;
+			npc.lifeMax = 80;
 			npc.dontTakeDamage = false;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
@@ -139,7 +138,7 @@ namespace Consolaria.NPCs
 			{
 				timer++;
 			}
-			else if (npc.Distance(Main.player[npc.target].Center) >= 350 && !Main.player[npc.target].dead || Main.player[npc.target].dead)
+			/*else if (npc.Distance(Main.player[npc.target].Center) >= 350 && !Main.player[npc.target].dead || Main.player[npc.target].dead)
 			{
 				if (timer <= 160)
 				{
@@ -150,8 +149,7 @@ namespace Consolaria.NPCs
 					timer++;
 				}
 			}
-
-			if (timer <= 160)
+			if (timer <= 140)
 			{
 				if (Main.npc[(int)npc.ai[1]].active && Main.npc[(int)npc.ai[1]].type == mod.NPCType("SnetchBase"))
 				{
@@ -162,36 +160,37 @@ namespace Consolaria.NPCs
 					npc.velocity.Y = num758;
 				}
 				npc.rotation = (float)Math.Atan2(Main.player[npc.target].Center.Y - (double)npc.Center.Y, Main.player[npc.target].Center.X - (double)npc.Center.X) + 3.14f;
-			}
+			}*/
 
-			if (timer >= 160 && timer <= 160)
+			if (timer <= 60 && npc.Distance(Main.player[npc.target].Center) <= 600 && !Main.player[npc.target].dead)
 			{
 				Main.PlaySound(29, (int)npc.Center.X, (int)npc.Center.Y, 7);
-				npc.velocity.X *= 0.98f;
-				npc.velocity.Y *= 0.98f;
+				npc.velocity.X *= 0.9f;
+				npc.velocity.Y *= 0.9f;
 				Vector2 vector8 = new Vector2(npc.position.X + (npc.width * 0.5f), npc.position.Y + (npc.height * 0.5f));
 				{
-					float rotation0 = (float)Math.Atan2((vector8.Y) - (Main.player[npc.target].position.Y + (Main.player[npc.target].height * 0.5f)), (vector8.X) - (Main.player[npc.target].position.X + (Main.player[npc.target].width * 0.5f)));
-					npc.velocity.X = (float)(Math.Cos(rotation0) * 16) * -1;
-					npc.velocity.Y = (float)(Math.Sin(rotation0) * 16) * -1;
+					float rotation0 = (float)Math.Atan2((vector8.Y) - (Main.player[npc.target].position.Y + (Main.player[npc.target].height * 0.5f)) + Main.rand.NextFloat(-4f, 4f), (vector8.X) - (Main.player[npc.target].position.X + (Main.player[npc.target].width * 0.5f)) + Main.rand.NextFloat(-4f, 4f));
+					npc.velocity.X += (float)(Math.Cos(rotation0) * 16) * -0.04f;
+					npc.velocity.Y += (float)(Math.Sin(rotation0) * 16) * -0.04f;
 				}
 				npc.rotation = (float)Math.Atan2((double)npc.velocity.Y, (double)npc.velocity.X) + 3.14f;
 			}
-
-			if (timer >= 180)
+			else
 			{
-				npc.velocity.X *= 0.98f;
-				npc.velocity.Y *= 0.98f;
-				Vector2 vector8 = new Vector2(npc.position.X + (npc.width * 0.5f), npc.position.Y + (npc.height * 0.5f));
+				if (Main.npc[(int)npc.ai[1]].active && Main.npc[(int)npc.ai[1]].type == mod.NPCType("SnetchBase"))
 				{
-					float rotation0 = (float)Math.Atan2((vector8.Y) - (Main.npc[(int)npc.ai[1]].position.Y + (Main.npc[(int)npc.ai[1]].height * 0.5f)), (vector8.X) - (Main.npc[(int)npc.ai[1]].position.X + (Main.npc[(int)npc.ai[1]].width * 0.5f)));
-					npc.velocity.X = (float)(Math.Cos(rotation0) * 16) * -1;
-					npc.velocity.Y = (float)(Math.Sin(rotation0) * 16) * -1;
+					npc.velocity.X *= 0.9f;
+					npc.velocity.Y *= 0.9f;
+					Vector2 vector8 = new Vector2(npc.position.X + (npc.width * 0.5f), npc.position.Y + (npc.height * 0.5f));
+					{
+						float rotation0 = (float)Math.Atan2((vector8.Y) - (Main.npc[(int)npc.ai[1]].position.Y + (Main.npc[(int)npc.ai[1]].height * 0.5f)) + Main.rand.NextFloat(-40f, 40f), (vector8.X) - (Main.npc[(int)npc.ai[1]].position.X + (Main.npc[(int)npc.ai[1]].width * 0.5f)) + Main.rand.NextFloat(-40f, 40f));
+						npc.velocity.X += (float)(Math.Cos(rotation0) * 16) * -0.03f;
+						npc.velocity.Y += (float)(Math.Sin(rotation0) * 16) * -0.03f;
+					}
 				}
-				if (Main.npc[(int)npc.ai[1]].Hitbox.Intersects(npc.Hitbox))
+				if (timer == 140)
 				{
 					timer = 0;
-					npc.velocity = Vector2.Zero;
 				}
 			}
 		}

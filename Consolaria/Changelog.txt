@@ -1,3 +1,12 @@
+1.2.3.6:
+- Reworked Dragon Snatcher AI and drastically lowered its spawnrate
+- Lowered Cabbage drop chance from Dragon Snatcher
+- Changed Dragon Snatcher, Dragon Hornet and Tiphnia sprites
+- Removed full brightness effect from Wyvern enemies
+- Wyvern enemies are now immune to Hot Sauce debuff since it caused visual glitches
+- Fixed some description text, i.e. lowercase names
+- Added a description line to Tonbogiri to reflect a bug we don't know the reason of
+
 1.2.3.5:
 - Fixed game crashing issue caused by Dragon Snatcher spawn in Jungle
 
