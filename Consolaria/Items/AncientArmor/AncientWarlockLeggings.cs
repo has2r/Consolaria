@@ -1,5 +1,7 @@
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.AncientArmor
@@ -19,7 +21,9 @@ namespace Consolaria.Items.AncientArmor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Ancient Warlock Leggings");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Perneras del Brujo Antiguas");
             Tooltip.SetDefault("8% increased movement speed and summon damage"+ "\nIncreases your max number of minions" + "\n'Ceremonial armor of a fabled summoner'");
+            Tooltip.AddTranslation(GameCulture.Spanish, "8% aumento de la velocidad de movimiento y daño de invocación" + "\nAumenta tu número máximo de minions" + "\n'Armadura ceremonial de un invocador legendario'");
         }
 
         public override void UpdateEquip(Player player)

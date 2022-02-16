@@ -1,4 +1,6 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Buffs
@@ -8,7 +10,9 @@ namespace Consolaria.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Zombie");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Zombi");
 			Description.SetDefault("Eats brains");
+			Description.AddTranslation(GameCulture.Spanish, "Come cerebros");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 		}

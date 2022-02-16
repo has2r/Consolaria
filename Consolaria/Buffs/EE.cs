@@ -1,4 +1,6 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Buffs
@@ -8,7 +10,9 @@ namespace Consolaria.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Eye of Eternity");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Ojo de la Eternidad");
 			Description.SetDefault("Eye of Eternity will fight for you");
+			Description.AddTranslation(GameCulture.Spanish, "Un Ojo de la Eternidad luchará por ti");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

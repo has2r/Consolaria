@@ -1,6 +1,8 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items
@@ -27,7 +29,9 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Tizona");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Tizona");
             Tooltip.SetDefault("Shoots a cursed skull");
+            Tooltip.AddTranslation(GameCulture.Spanish, "Dispara una calavera maldita");
         }
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {

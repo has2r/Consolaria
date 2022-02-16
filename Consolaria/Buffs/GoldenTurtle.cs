@@ -1,4 +1,6 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Buffs
@@ -8,7 +10,9 @@ namespace Consolaria.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Golden Turtle");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Tortuga Dorada");
 			Description.SetDefault("Rare turtle");
+			Description.AddTranslation(GameCulture.Spanish, "Una rara tortuga");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 		}

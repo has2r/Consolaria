@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Microsoft.Xna.Framework;
 
 namespace Consolaria.Items
@@ -34,7 +36,9 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Firecracker");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Petardo");
             Tooltip.SetDefault("");
+            Tooltip.AddTranslation(GameCulture.Spanish, "");
         }
     }
 }

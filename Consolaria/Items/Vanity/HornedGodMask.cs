@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using ReLogic.Localization.IME;
 using Terraria.Localization;
 
 namespace Consolaria.Items.Vanity
@@ -22,7 +23,9 @@ namespace Consolaria.Items.Vanity
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Horned God Mask");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Máscara de dios cornudo");
             Tooltip.SetDefault("");
+            Tooltip.AddTranslation(GameCulture.Spanish, "");
         }
 
         public override bool IsArmorSet(Item head, Item body, Item legs)

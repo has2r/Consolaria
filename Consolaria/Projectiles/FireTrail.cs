@@ -1,12 +1,20 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Projectiles
 {
 	public class FireTrail : ModProjectile
 	{
+		public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Fire Trail");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Rastro de fuego");
+        }
+
 		public override void SetDefaults()
 		{
 			projectile.width = 8;

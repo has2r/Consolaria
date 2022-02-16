@@ -1,4 +1,6 @@
 using Terraria.ModLoader;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 
 namespace Consolaria.Items
 {
@@ -24,7 +26,9 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Lepus Trophy");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Trofeo Lepus");
             Tooltip.SetDefault("");
+            Tooltip.AddTranslation(GameCulture.Spanish, "");
         }
     }
 }

@@ -1,4 +1,6 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Buffs
@@ -8,7 +10,9 @@ namespace Consolaria.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Guinea Pig");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Conejillo de Indias");
 			Description.SetDefault("Simply adorable");
+			Description.AddTranslation(GameCulture.Spanish, "Simplemente adorable");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 		}

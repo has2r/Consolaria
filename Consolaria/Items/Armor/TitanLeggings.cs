@@ -1,6 +1,8 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Armor
@@ -20,7 +22,9 @@ namespace Consolaria.Items.Armor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Titan Leggings");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Grebas de Titán");
             Tooltip.SetDefault("10% increased movement speed and ranged damage" + "\n15% chance to not consume ammo" + "\n'Ceremonial armor of a fabled archer'");
+            Tooltip.AddTranslation(GameCulture.Spanish, "10% Incrementado la Velocidad de movimiento y rango de Daño" + "\n15% de Probabilidad de No Consumir Munición" + "\n'Armadura ceremonial de un arquero legendario'");
         }
 
         public override void UpdateEquip(Player player)

@@ -1,5 +1,7 @@
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Vanity
@@ -19,7 +21,9 @@ namespace Consolaria.Items.Vanity
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Monomi Body");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Cuerpo de Monomi");
             Tooltip.SetDefault("");
+            Tooltip.AddTranslation(GameCulture.Spanish, "");
         }
         public override void AddRecipes()
         {

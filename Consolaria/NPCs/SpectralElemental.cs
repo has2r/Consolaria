@@ -2,6 +2,8 @@
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Consolaria.NPCs
@@ -13,6 +15,7 @@ namespace Consolaria.NPCs
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Spectral Elemental");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Elemental Espectral");
             Main.npcFrameCount[npc.type] = 15;
         }
         public override void SetDefaults()

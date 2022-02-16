@@ -1,6 +1,8 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items
@@ -25,7 +27,9 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Great Drumstick");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Gran Muslo");
             Tooltip.SetDefault("'I just want those crunchies'" + "\nCan hit enemies with spicy sauce");
+            Tooltip.AddTranslation(GameCulture.Spanish, "'Sólo quiero esos crujientes'" + "\nPuede golpear a los enemigos con salsa picante");
         }
         public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
         {

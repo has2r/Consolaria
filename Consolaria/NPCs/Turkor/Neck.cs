@@ -1,5 +1,7 @@
 using Terraria;
 using Terraria.ModLoader;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -9,6 +11,11 @@ namespace Consolaria.NPCs.Turkor
 {
 	public class Neck : ModProjectile
 	{
+		 public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Neck");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Cuello");
+        }
 		public override void SetDefaults()
 		{
 			projectile.aiStyle = -1;

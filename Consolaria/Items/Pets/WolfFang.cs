@@ -1,5 +1,7 @@
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Pets
@@ -20,7 +22,9 @@ namespace Consolaria.Items.Pets
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Wolf Fang");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Colmillo de Lobo");
 			Tooltip.SetDefault("Summons a pet werewolf");
+			Tooltip.AddTranslation(GameCulture.Spanish, "Invoca a un Hombre Lobo mascota");
         }
 
         public override void UseStyle(Player player)

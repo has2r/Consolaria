@@ -1,5 +1,7 @@
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Vanity
@@ -20,7 +22,9 @@ namespace Consolaria.Items.Vanity
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Toro's Legs");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Piernas de Toro");
             Tooltip.SetDefault("");
+            Tooltip.AddTranslation(GameCulture.Spanish, "");
         }
         public override void AddRecipes()
         {

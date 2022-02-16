@@ -1,5 +1,8 @@
 using Terraria.ID;
 using Terraria.ModLoader;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
+
 
 namespace Consolaria.Items
 {
@@ -24,7 +27,9 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Vulcan Bolt");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Relámpago volcánico");
             Tooltip.SetDefault("");
+            Tooltip.AddTranslation(GameCulture.Spanish, "");
         }
     }
 }

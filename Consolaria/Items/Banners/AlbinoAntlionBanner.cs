@@ -1,10 +1,18 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Banners
 {
 	public class AlbinoAntlionBanner : ModItem
 	{
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Albino Antlion Banner");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Estandarte de Hormiga Albina");
+		}
+
 		public override void SetDefaults()
         {
 			item.width = 10;

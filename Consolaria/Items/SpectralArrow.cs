@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items
@@ -26,7 +28,9 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Spectral Arrow");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Flecha espectral");
             Tooltip.SetDefault("inflict the Spectral Flames debuff on enemies");
+            Tooltip.AddTranslation(GameCulture.Spanish, "inflige llamas espectrales a los enemigos");
         }      
     }
 }

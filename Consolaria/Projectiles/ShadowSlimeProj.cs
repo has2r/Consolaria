@@ -1,6 +1,8 @@
 using Terraria;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ID;
 using System;
 
@@ -8,6 +10,12 @@ namespace Consolaria.Projectiles
 {
     class ShadowSlimeProj : ModProjectile
     {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Shadow Slime Projectile");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Proyectil de Slime Sombrío");
+        }
+
         public override void SetDefaults()
         {
             projectile.alpha = 255;

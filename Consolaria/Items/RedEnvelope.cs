@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
+using ReLogic.Localization.IME;
 using Microsoft.Xna.Framework;
 using Terraria.Localization;
 
@@ -19,9 +20,11 @@ namespace Consolaria.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Red Envelope");
-			DisplayName.AddTranslation(GameCulture.Russian, "Красный конверт");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Sobre rojo");
+			DisplayName.AddTranslation(GameCulture.Russian, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
 			Tooltip.SetDefault("Right click to open");
-			Tooltip.AddTranslation(GameCulture.Russian, "ПКМ, чтобы открыть");
+			Tooltip.AddTranslation(GameCulture.Spanish, "Haga clic derecho para abrir");
+			Tooltip.AddTranslation(GameCulture.Russian, "пїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
 		}
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{

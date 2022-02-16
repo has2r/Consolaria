@@ -2,6 +2,8 @@ using System;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.NPCs.Turkor
@@ -41,6 +43,7 @@ namespace Consolaria.NPCs.Turkor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Turkor's Head");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Cabeza de Turkor");
         }
 
         public override void ScaleExpertStats(int numPlayers, float bossLifeScale)

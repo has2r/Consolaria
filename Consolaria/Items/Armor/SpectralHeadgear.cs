@@ -1,5 +1,7 @@
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Armor
@@ -19,7 +21,9 @@ namespace Consolaria.Items.Armor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Spectral Headgear");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Tocado de Espectro");
             Tooltip.SetDefault("5% increased magical damage" + "\n5% increased magical critical strike chance" + "\nIncreases maximum mana by 70" + "\n'Ceremonial armor of a fabled mystic'");
+            Tooltip.AddTranslation(GameCulture.Spanish, "5% aumento de daño mágico" + "\n5% aumento de probabilidad de golpe crítico mágico" + "\nAumenta el maná máximo en 70" + "\n'Armadura ceremonial de un místico legendario'");
         }
         public override void UpdateEquip(Player player)
         {

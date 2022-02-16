@@ -1,10 +1,17 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Banners
 {
 	public class ShadowSlimeBanner : ModItem
 	{
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Shadow Slime Banner");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Estandarte de Slime Sombrío");
+		}
 		public override void SetDefaults()
         {
 			item.width = 10;

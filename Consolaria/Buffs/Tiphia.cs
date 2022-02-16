@@ -1,4 +1,6 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Buffs
@@ -8,7 +10,9 @@ namespace Consolaria.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Tiphia");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Tiphia");
 			Description.SetDefault("Don't let it sting you");
+			Description.AddTranslation(GameCulture.Spanish, "No dejes que te pique");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 		}

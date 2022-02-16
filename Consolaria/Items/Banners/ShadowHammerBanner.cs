@@ -1,10 +1,18 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Banners
 {
 	public class ShadowHammerBanner : ModItem
 	{
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Shadow Hammer Banner");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Estandarte de Martillo Sombrío");
+		}
+
 		public override void SetDefaults()
         {
 			item.width = 10;

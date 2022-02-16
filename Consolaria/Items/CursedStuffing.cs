@@ -2,6 +2,8 @@ using Microsoft.Xna.Framework;
 using System.Linq;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items
@@ -11,7 +13,9 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Cursed Stuffing");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Relleno Maldito");
             Tooltip.SetDefault("It pulses with malevolent energy" + "\nSummons Turkor the Ungrateful" + "\nPet turkey must be with you");
+            Tooltip.AddTranslation(GameCulture.Spanish, "Pulsa con energía malévola" + "\nInvoca a Turkor el Desagradecido" + "\nEl Pavo mascota debe estar contigo");
         }
 
         public override void SetDefaults()

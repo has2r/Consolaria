@@ -1,4 +1,6 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Vanity
@@ -19,7 +21,9 @@ namespace Consolaria.Items.Vanity
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Fabulous Slippers");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Zapatillas fabulosas");
             Tooltip.SetDefault("Oh myyy!");
+            Tooltip.AddTranslation(GameCulture.Spanish, "!Oh mi¡");
         }    
     }
 }

@@ -1,10 +1,17 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Banners
 {
 	public class MythicalWyvernBanner : ModItem
 	{
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Mythical Wyvern Banner");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Estandarte de Guiverno Mitológico");
+		}
 		public override void SetDefaults()
 		{
 			item.width = 10;

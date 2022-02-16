@@ -1,5 +1,7 @@
 ﻿using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Projectiles
@@ -9,6 +11,7 @@ namespace Consolaria.Projectiles
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Albino Mandible");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Mandíbula Albina");
         }
 
         public override void SetDefaults()

@@ -1,5 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items
@@ -9,7 +11,9 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Suspicious Looking Egg");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Huevo de aspecto sospechoso");
             Tooltip.SetDefault("Summons Lepus");
+            Tooltip.AddTranslation(GameCulture.Spanish, "Invoca a Lepus");
         }
 
         public override void SetDefaults()

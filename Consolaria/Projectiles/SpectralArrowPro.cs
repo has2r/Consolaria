@@ -1,10 +1,18 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Projectiles
 {
     public class SpectralArrowPro : ModProjectile
     {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Spectral Arrow");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Flecha Espectral");
+        }
+
         public override void SetDefaults()
         {
             projectile.width = 5;

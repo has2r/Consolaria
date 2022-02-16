@@ -1,5 +1,7 @@
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items
@@ -9,7 +11,9 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Suspicious Looking Skull");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Cráneo de aspecto sospechoso");
             Tooltip.SetDefault("Summons Ocram");
+            Tooltip.AddTranslation(GameCulture.Spanish, "Invoca a Ocram");
         }
         public override void SetDefaults()
         {

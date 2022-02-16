@@ -1,6 +1,8 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items
@@ -29,7 +31,9 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Dragon's Breath");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Aliento de dragón");
             Tooltip.SetDefault("'Shoots Spectral Flames'\n'70% chance to not consume gel'");
+            Tooltip.AddTranslation(GameCulture.Spanish, "Dispara Llamas Espectrales" + "\n70% de probabilidad de no consumir gel");
         }
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {

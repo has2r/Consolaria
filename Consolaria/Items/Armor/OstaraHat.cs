@@ -1,4 +1,6 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Armor
@@ -18,7 +20,9 @@ namespace Consolaria.Items.Armor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Hat of Ostara");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Sombrero de Ostara");
             Tooltip.SetDefault("5% increased movement speed");
+            Tooltip.AddTranslation(GameCulture.Spanish, "5% Aumenta la velocidad de movimiento");
         }
 
         public override void UpdateEquip(Player player)

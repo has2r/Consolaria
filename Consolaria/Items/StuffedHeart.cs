@@ -2,6 +2,8 @@ using Microsoft.Xna.Framework;
 using System.Linq;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items
@@ -11,7 +13,9 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Stuffed Heart");
-            Tooltip.SetDefault("Summons Turkor the Ungrateful \nNo Turkey Feather needed");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Corazón relleno");
+            Tooltip.SetDefault("Summons Turkor the Ungrateful" + "\nNo Turkey Feather needed");
+            Tooltip.AddTranslation(GameCulture.Spanish, "Invoca a Turkor el Desagradecido" + "\nNo se necesita pluma de pavo");
         }
 
         public override void SetDefaults()

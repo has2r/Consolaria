@@ -1,5 +1,7 @@
 ﻿using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items
@@ -9,7 +11,9 @@ namespace Consolaria.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Horn o' plenty");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Cuerno de la abundancia");
             Tooltip.SetDefault("It is filled with the inexhaustible gifts of celebratory fruits.");
+			Tooltip.AddTranslation(GameCulture.Spanish, "Está lleno de los dones inagotables de las frutas de celebración.");
         }
 
 		public override void SetDefaults()

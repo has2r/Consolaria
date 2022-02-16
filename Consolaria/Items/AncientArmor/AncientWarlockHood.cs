@@ -1,5 +1,7 @@
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.AncientArmor
@@ -19,7 +21,9 @@ namespace Consolaria.Items.AncientArmor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Ancient Warlock Hood");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Capucha de Brujo Antigua");
             Tooltip.SetDefault("9% increased minion damage\nIncreases your max number of minions" + "\n'Ceremonial armor of a fabled summoner'");
+            Tooltip.AddTranslation(GameCulture.Spanish, "9% aumento de daño de minion" + "\nAumenta tu número máximo de minions" + "\n'Armadura ceremonial de un invocador legendario'");
         }
 
         public override void UpdateEquip(Player player)

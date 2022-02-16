@@ -1,6 +1,8 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items
@@ -30,7 +32,9 @@ namespace Consolaria.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Vulcan Repeater");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Repetidor volcánico");
 			Tooltip.SetDefault("Transforms any suitable ammo into Vulcan Bolts");
+			Tooltip.AddTranslation(GameCulture.Spanish, "Transforma cualquier munición adecuada en Relámpagos volcánicos");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

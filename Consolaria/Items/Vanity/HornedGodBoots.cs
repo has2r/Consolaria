@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using ReLogic.Localization.IME;
 using Terraria.Localization;
 using Microsoft.Xna.Framework;
 
@@ -22,7 +23,9 @@ namespace Consolaria.Items.Vanity
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Horned God Boots");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Botas de dios cornudo");
             Tooltip.SetDefault("");
+            Tooltip.AddTranslation(GameCulture.Spanish, "");
         }
     }
 }

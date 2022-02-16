@@ -1,4 +1,6 @@
 ﻿using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items
@@ -8,6 +10,9 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Purple Stucco");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Estuco morado");
+            Tooltip.SetDefault("");
+            Tooltip.AddTranslation(GameCulture.Spanish, "");
         }
         public override void SetDefaults()
         {

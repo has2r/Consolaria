@@ -1,6 +1,8 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ID;
 
 namespace Consolaria.Projectiles
@@ -34,6 +36,7 @@ namespace Consolaria.Projectiles
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Eye of Eternity");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Ojo de la Eternidad");
         }
 
         void Shoot()

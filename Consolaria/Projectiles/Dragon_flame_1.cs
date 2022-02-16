@@ -1,11 +1,19 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Projectiles
 {
     public class Dragon_flame_1 : ModProjectile
     {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Dragon Flame");
+            DisplayName.AddTranslation(GameCulture.Spanish, "LLama de Dragón");
+        }
+        
         public override void SetDefaults()
         {
             projectile.width = 12;

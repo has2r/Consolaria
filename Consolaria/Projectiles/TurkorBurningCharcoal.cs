@@ -1,6 +1,8 @@
 using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -8,6 +10,11 @@ namespace Consolaria.Projectiles
 {
     public class TurkorBurningCharcoal : ModProjectile
     {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Turkor Burning Charcoal");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Carbón Ardiente de Turkor");
+        }
         int collides = 0;
         public override bool CloneNewInstances
         {

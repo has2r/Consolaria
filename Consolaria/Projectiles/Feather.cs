@@ -1,11 +1,19 @@
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Projectiles
 {
     public class Feather : ModProjectile
-    {       
+    {   
+         public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Feather");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Pluma");
+        }   
+
         public override void SetDefaults()
         {
             projectile.CloneDefaults(ProjectileID.HarpyFeather);

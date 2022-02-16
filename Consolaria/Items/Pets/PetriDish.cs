@@ -1,5 +1,7 @@
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Pets
@@ -20,7 +22,9 @@ namespace Consolaria.Items.Pets
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Petri Dish");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Placa de Petri");
 			Tooltip.SetDefault("Summons a pet slime");
+			Tooltip.AddTranslation(GameCulture.Spanish, "Invoca un Slime mascota");
         }
 
         public override void UseStyle(Player player)

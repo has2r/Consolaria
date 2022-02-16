@@ -1,6 +1,8 @@
 using System;
 using Terraria;
 using Terraria.ModLoader;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ID;
 using Microsoft.Xna.Framework;
 
@@ -12,6 +14,7 @@ namespace Consolaria.NPCs.Lepus
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Lepus");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Lepus");
             Main.npcFrameCount[npc.type] = 7;
         }
 

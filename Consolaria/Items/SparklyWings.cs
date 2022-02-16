@@ -1,5 +1,7 @@
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items
@@ -9,7 +11,10 @@ namespace Consolaria.Items
     {
         public override void SetStaticDefaults()
         {
+            DisplayName.SetDefault("Sparkly Wings");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Alas brillantes");
             Tooltip.SetDefault("");
+            Tooltip.AddTranslation(GameCulture.Spanish, "");
         }
 
         public override void SetDefaults()

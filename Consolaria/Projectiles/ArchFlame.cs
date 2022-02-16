@@ -1,6 +1,8 @@
 using System;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Projectiles
@@ -11,6 +13,7 @@ namespace Consolaria.Projectiles
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("A-Tier Flaming Breath");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Aliento llameante de nivel A");
 		}
 		public override void SetDefaults()
 		{

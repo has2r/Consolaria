@@ -1,4 +1,6 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Buffs
@@ -8,7 +10,9 @@ namespace Consolaria.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Pet Turkey");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Pavo Mascota");
 			Description.SetDefault("");
+			Description.AddTranslation(GameCulture.Spanish, "Pavo grande y carnoso");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 		}

@@ -1,12 +1,20 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Projectiles
 {
     public class TizonaSkull : ModProjectile
-    {       
+    {   
+         public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Tizona Skull");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Calavera de Tizona");
+        }
+
         public override void SetDefaults()
         {
             projectile.CloneDefaults(585);

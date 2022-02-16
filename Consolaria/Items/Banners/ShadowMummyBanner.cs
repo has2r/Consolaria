@@ -1,10 +1,17 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Banners
 {
 	public class ShadowMummyBanner : ModItem
 	{
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Shadow Mummy Banner");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Estandarte de Momia Sombria");
+		}
 		public override void SetDefaults()
         {
 			item.width = 10;

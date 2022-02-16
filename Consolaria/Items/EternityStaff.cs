@@ -1,6 +1,8 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items
@@ -31,7 +33,9 @@ namespace Consolaria.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Staff of Eternity");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Bastón de la Eternidad");
 			Tooltip.SetDefault("Summons an Eye of Eternity to fight for you.");
+			Tooltip.AddTranslation(GameCulture.Spanish, "Invoca un Ojo de la Eternidad para que luche por ti");
 		}
 
 		public override bool AltFunctionUse(Player player)

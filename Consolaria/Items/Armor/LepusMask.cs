@@ -1,4 +1,6 @@
 using Terraria.ModLoader;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 
 namespace Consolaria.Items.Armor
 {
@@ -16,7 +18,9 @@ namespace Consolaria.Items.Armor
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Lepus Mask");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Máscara de Lepus");
 			Tooltip.SetDefault("");
+			Tooltip.AddTranslation(GameCulture.Spanish, "");
 		}
 	}
 }

@@ -3,6 +3,8 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using System;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Consolaria.Projectiles;
 
 namespace Consolaria.NPCs
@@ -12,6 +14,7 @@ namespace Consolaria.NPCs
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Shadow Slime");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Slime Sombrío");
             Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.SpikedIceSlime];
         }
 

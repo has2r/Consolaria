@@ -1,6 +1,8 @@
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Microsoft.Xna.Framework;
 
 namespace Consolaria.NPCs.Turkor
@@ -32,6 +34,7 @@ namespace Consolaria.NPCs.Turkor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Turkor the Ungrateful");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Turkor el Desagradecido");
         }
         public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
         {

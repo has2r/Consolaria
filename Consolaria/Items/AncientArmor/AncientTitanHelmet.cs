@@ -1,4 +1,6 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.AncientArmor
@@ -18,7 +20,9 @@ namespace Consolaria.Items.AncientArmor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Ancient Titan Helmet");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Casco De Titán Antiguo");
             Tooltip.SetDefault("15% increased ranged damage and critical strike chance" + "\n25% chance to not consume ammo" + "\n'Ceremonial armor of a fabled archer'");
+            Tooltip.AddTranslation(GameCulture.Spanish, "15% aumento de daño a distancia y probabilidad de golpe crítico" + "\n25% De Probabilidad de No Consumir Munición" + "\n'Armadura ceremonial de un legendario arquero'");
         }
 
         public override void UpdateEquip(Player player)

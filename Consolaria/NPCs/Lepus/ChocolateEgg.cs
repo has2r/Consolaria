@@ -1,5 +1,7 @@
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.NPCs.Lepus
@@ -23,6 +25,7 @@ namespace Consolaria.NPCs.Lepus
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Chocolate Egg");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Huevo de Chocolate");
         }
 
         public override void AI()

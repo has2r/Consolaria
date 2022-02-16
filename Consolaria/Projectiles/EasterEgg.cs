@@ -1,11 +1,19 @@
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Projectiles
 {
     public class EasterEgg : ModProjectile
     {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Easter Egg");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Huevo de Pascua");
+        }
+
         public override void SetDefaults()
         {
             projectile.CloneDefaults(ProjectileID.RottenEgg);

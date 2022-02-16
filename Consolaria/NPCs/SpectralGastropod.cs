@@ -2,6 +2,8 @@
 using System;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.NPCs
@@ -34,6 +36,7 @@ namespace Consolaria.NPCs
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Spectral Gastropod");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Gasterópodo Espectral");
 		}
 
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)

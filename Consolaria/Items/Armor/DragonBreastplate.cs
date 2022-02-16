@@ -1,4 +1,6 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -19,7 +21,9 @@ namespace Consolaria.Items.Armor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Dragon Breastplate");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Coraza de Dragón");
             Tooltip.SetDefault("10% increased melee critical strike chance" + "\n5% increased melee damage" + "\n'Ceremonial armor of a fabled warrior'");
+            Tooltip.AddTranslation(GameCulture.Spanish, "10% de probabilidad de ataque crítico" + "\n5% aumento de daño cuerpo a cuerpo" + "\n'Armadura ceremonial de un legendario guerrero'");
         }
 
         public override void UpdateEquip(Player player)

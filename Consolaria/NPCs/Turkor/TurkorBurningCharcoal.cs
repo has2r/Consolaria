@@ -1,5 +1,7 @@
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -18,6 +20,7 @@ namespace Consolaria.NPCs.Turkor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Turkor Burning Charcoal");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Carbón Ardiente de Turkor");
             Main.npcFrameCount[npc.type] = 4;
         }
 

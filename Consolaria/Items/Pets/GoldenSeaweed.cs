@@ -1,5 +1,7 @@
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Pets
@@ -20,7 +22,9 @@ namespace Consolaria.Items.Pets
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Golden Seaweed");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Algas Doradas");
 			Tooltip.SetDefault("Summons a golden turtle");
+			Tooltip.AddTranslation(GameCulture.Spanish, "Invoca una Tortuga Dorada");
         }
 
         public override void UseStyle(Player player)

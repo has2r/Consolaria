@@ -1,5 +1,7 @@
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items
@@ -30,7 +32,9 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Spicy Sauce");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Salsa picante");
             Tooltip.SetDefault("Affected enemies take additional damage from fire");
+            Tooltip.AddTranslation(GameCulture.Spanish, "Los enemigos afectados reciben daño adicional del fuego");
         }
     }
 }

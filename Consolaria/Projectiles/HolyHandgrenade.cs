@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Achievements;
+using ReLogic.Localization.IME;
 using Terraria.Localization;
 
 namespace Consolaria.Projectiles
@@ -13,6 +14,7 @@ namespace Consolaria.Projectiles
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Holy Handgrenade");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Granada de mano sagrada");
         }
         public override void SetDefaults()
         {

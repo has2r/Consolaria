@@ -1,4 +1,6 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Buffs
@@ -8,7 +10,9 @@ namespace Consolaria.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Weird turkey");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Pavo Raro");
 			Description.SetDefault("Weird turkey will fight for you");
+			Description.AddTranslation(GameCulture.Spanish, "Un Pavo Raro luchará por ti");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

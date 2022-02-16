@@ -1,5 +1,7 @@
 using Terraria;
 using Terraria.ModLoader;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ID;
 
 namespace Consolaria.Items
@@ -18,7 +20,9 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Purple Thread");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Hilo morado");
             Tooltip.SetDefault("");
+            Tooltip.AddTranslation(GameCulture.Spanish, "");
         }
 
         /*public override void AddRecipes()

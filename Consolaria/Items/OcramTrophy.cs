@@ -1,4 +1,6 @@
 using Terraria.ModLoader;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 
 namespace Consolaria.Items
 {
@@ -23,7 +25,9 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Ocram Trophy");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Trofeo Ocram");
             Tooltip.SetDefault("");
+            Tooltip.AddTranslation(GameCulture.Spanish, "");
         }
     }
 }

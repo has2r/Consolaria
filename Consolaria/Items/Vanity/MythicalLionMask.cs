@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using Terraria.ModLoader;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Microsoft.Xna.Framework;
 
 namespace Consolaria.Items.Vanity
@@ -21,7 +23,9 @@ namespace Consolaria.Items.Vanity
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Mythical Lion Mask");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Máscara de león mítico");
             Tooltip.SetDefault("");
+            Tooltip.AddTranslation(GameCulture.Spanish, "");
         }    
     }
 }

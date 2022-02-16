@@ -2,6 +2,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.NPCs
@@ -12,6 +14,7 @@ namespace Consolaria.NPCs
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Mythical Wyvern");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Guiverno Mitológico");
             Main.npcFrameCount[npc.type] = Main.npcFrameCount[npc.type] = 1;
         }
 

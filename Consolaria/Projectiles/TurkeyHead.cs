@@ -2,6 +2,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Projectiles
@@ -29,6 +31,7 @@ namespace Consolaria.Projectiles
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Weird Turkey");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Pavo Raro");
 
         }
 

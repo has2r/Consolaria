@@ -1,5 +1,7 @@
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items
@@ -19,7 +21,9 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Treasure Bag");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Bolsa del Tesoro");
             Tooltip.SetDefault("Right click to open");
+            Tooltip.AddTranslation(GameCulture.Spanish, "Haga clic derecho para abrir");
         }
 
         public override int BossBagNPC => ModContent.NPCType<NPCs.Lepus.Lepus>();

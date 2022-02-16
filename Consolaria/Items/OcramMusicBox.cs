@@ -1,4 +1,6 @@
 using Terraria.ModLoader;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace Consolaria.Items
@@ -8,6 +10,9 @@ namespace Consolaria.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Music Box (Ocram)");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Caja de música (Ocram)");
+			Tooltip.SetDefault("");
+			Tooltip.AddTranslation(GameCulture.Spanish, "");
 		}
 		public override void SetDefaults() 
 		{

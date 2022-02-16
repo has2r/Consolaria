@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using ReLogic.Localization.IME;
 using Terraria.Localization;
 
 namespace Consolaria.Projectiles
@@ -12,6 +13,7 @@ namespace Consolaria.Projectiles
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Firecracker");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Petardo");
             DisplayName.AddTranslation(GameCulture.Russian, "Петарда");
         }
         public override void SetDefaults()

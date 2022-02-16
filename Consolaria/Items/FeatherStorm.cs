@@ -1,5 +1,7 @@
 ﻿using Terraria.ModLoader;
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ID;
 using Microsoft.Xna.Framework;
 using System;
@@ -11,7 +13,9 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Feather Storm");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Tormenta de Plumas");
             Tooltip.SetDefault("");
+            Tooltip.AddTranslation(GameCulture.Spanish, "");
         }     
         public override void SetDefaults()
         {

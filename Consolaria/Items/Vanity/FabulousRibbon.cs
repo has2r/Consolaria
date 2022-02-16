@@ -1,4 +1,6 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Vanity
@@ -19,7 +21,9 @@ namespace Consolaria.Items.Vanity
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Fabulous Ribbon");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Pajarita fabulosa");
             Tooltip.SetDefault("Allows flight and slow fall");
+            Tooltip.AddTranslation(GameCulture.Spanish, "");
         }
         public override bool IsArmorSet(Item head, Item body, Item legs)
         {

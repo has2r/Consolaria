@@ -3,12 +3,20 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Projectiles
 {  
     public class SpectralBomb : ModProjectile
     {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Spectral Bomb");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Bomba Espectral");
+        }
+
         private int runerotation;
 
         public override void SetDefaults()

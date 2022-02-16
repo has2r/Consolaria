@@ -2,6 +2,8 @@ using Microsoft.Xna.Framework;
 using System;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Projectiles
@@ -13,6 +15,7 @@ namespace Consolaria.Projectiles
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Arch Scythe");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Archiguadaña");
 		}
 		public override void SetDefaults()
 		{

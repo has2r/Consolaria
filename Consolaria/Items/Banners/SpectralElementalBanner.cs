@@ -1,10 +1,18 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Banners
 {
 	public class SpectralElementalBanner : ModItem
 	{
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Spectral Elemental Banner");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Estandarte de Elemental Espectral");
+		}
+
 		public override void SetDefaults()
         {
 			item.width = 10;

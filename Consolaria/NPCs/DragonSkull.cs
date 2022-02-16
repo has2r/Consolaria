@@ -1,6 +1,8 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.NPCs
@@ -11,6 +13,7 @@ namespace Consolaria.NPCs
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Dragon Skull");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Calavera de Dragón");
 			Main.npcFrameCount[npc.type] = 3;
 		}
 

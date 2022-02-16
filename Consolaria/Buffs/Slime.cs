@@ -1,4 +1,6 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Buffs
@@ -8,7 +10,9 @@ namespace Consolaria.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Slime");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Slime");
 			Description.SetDefault("A real slime ball");
+			Description.AddTranslation(GameCulture.Spanish, "Una verdadera bola de Slime");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 		}

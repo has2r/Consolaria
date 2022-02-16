@@ -1,12 +1,20 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Projectiles
 {
     public class OcramSkull : ModProjectile
-    {       
+    {      
+         public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Ocram Skull");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Cráneo de Ocram");
+        }
+
         public override void SetDefaults()
         {
             projectile.CloneDefaults(ProjectileID.Skull);

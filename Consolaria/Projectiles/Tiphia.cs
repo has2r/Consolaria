@@ -1,5 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Projectiles
@@ -18,6 +20,7 @@ namespace Consolaria.Projectiles
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Tiphia");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Tiphia");
             Main.projFrames[projectile.type] = 3;
         }
 

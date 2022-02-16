@@ -1,5 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -22,7 +24,10 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Soul of Blight");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Alma de plaga");
             Tooltip.SetDefault("'The essence of infected creatures'");
+            Tooltip.AddTranslation(GameCulture.Spanish, "'La esencia de las criaturas infectadas'");
+            
             Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 4));
             ItemID.Sets.AnimatesAsSoul[item.type] = true;
             ItemID.Sets.ItemIconPulse[item.type] = true;

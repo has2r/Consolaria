@@ -2,6 +2,8 @@ using System;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Microsoft.Xna.Framework;
 
 namespace Consolaria.NPCs.Ocram
@@ -14,6 +16,7 @@ namespace Consolaria.NPCs.Ocram
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Ocram");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Ocram");
             Main.npcFrameCount[npc.type] = 6;
         }
         public override void SetDefaults()

@@ -1,5 +1,7 @@
 ﻿using Terraria.ID;
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items          
@@ -26,7 +28,9 @@ namespace Consolaria.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Albino Mandible");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Mandíbula Albina");
 			Tooltip.SetDefault("");
+			Tooltip.AddTranslation(GameCulture.Spanish, "");
 		}
 		public override bool CanUseItem(Player player)
 		{

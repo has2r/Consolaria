@@ -1,10 +1,17 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Banners
 {
 	public class DragonSkullBanner : ModItem
 	{
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Dragon Skull Banner");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Estandarte de Calavera de Dragón");
+		}
 		public override void SetDefaults()
 		{
 			item.width = 10;

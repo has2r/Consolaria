@@ -1,11 +1,19 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Projectiles
 {
     public class SpicyExplosion : ModProjectile
     {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Spicy Explosion");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Explosión Picante");
+        }
+
         public override void SetDefaults()
         {
             projectile.thrown = true;

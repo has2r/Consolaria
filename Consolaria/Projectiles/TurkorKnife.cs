@@ -1,4 +1,6 @@
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Projectiles
@@ -8,6 +10,7 @@ namespace Consolaria.Projectiles
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Turkor Knife");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Cuchilla de Turkor");
         }
 
         public override void SetDefaults()

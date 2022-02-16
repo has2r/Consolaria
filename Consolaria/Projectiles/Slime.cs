@@ -1,6 +1,8 @@
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Projectiles
@@ -21,6 +23,7 @@ namespace Consolaria.Projectiles
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Pet Slime");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Slime Mascota");
             Main.projFrames[projectile.type] = 2;
         }
 

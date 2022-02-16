@@ -1,6 +1,8 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.NPCs
@@ -32,6 +34,7 @@ namespace Consolaria.NPCs
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Orca");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Orca");
         }
 
         public override void HitEffect(int hitDirection, double damage)

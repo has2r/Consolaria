@@ -1,5 +1,7 @@
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Armor
@@ -19,7 +21,9 @@ namespace Consolaria.Items.Armor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Spectral Armor");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Cota de malla de Espectro ");
             Tooltip.SetDefault("7% increased magical damage"+"\n4% increased magical critical strike chance" + "\nIncreases maximum mana by 50" + "\n'Ceremonial armor of a fabled mystic'");
+            Tooltip.AddTranslation(GameCulture.Spanish, "7% aumento de daño mágico" + "\n4% aumento de probabilidad de golpe crítico mágico" + "\nAumenta el maná máximo en 50" + "\n'Armadura ceremonial de un místico legendario'");
         }
         public override void UpdateEquip(Player player)
         {

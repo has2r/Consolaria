@@ -2,6 +2,8 @@
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -16,6 +18,7 @@ namespace Consolaria.NPCs
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Dragon Snatcher");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Atrapadora Dragón");
 		}
 		public override void SetDefaults()
 		{

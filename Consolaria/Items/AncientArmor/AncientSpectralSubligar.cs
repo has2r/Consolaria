@@ -1,4 +1,6 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.AncientArmor
@@ -18,7 +20,9 @@ namespace Consolaria.Items.AncientArmor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Ancient Spectral Subligar");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Grebas de Espectro Antiguas");
             Tooltip.SetDefault("12% increased movement speed" + "\n6% increased magical damage" + "\nIncreases maximum mana by 30" + "\n'Ceremonial armor of a fabled mystic'");
+            Tooltip.AddTranslation(GameCulture.Spanish, "12% aumento de la velocidad de movimiento" + "\n6% aumento de daño mágico" + "\nAumenta el maná máximo en 30" + "\n'Armadura ceremonial de un místico legendario'");
         }
         public override void UpdateEquip(Player player)
         {

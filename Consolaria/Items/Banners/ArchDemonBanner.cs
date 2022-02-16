@@ -1,11 +1,19 @@
 using Terraria;
 using Terraria.ModLoader;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ID;
 
 namespace Consolaria.Items.Banners
 {
 	public class ArchDemonBanner : ModItem
 	{
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Arch Demon Banner");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Estandarte de Archidemonio");
+		}
+
 		public override void SetDefaults()
         {
 			item.width = 10;

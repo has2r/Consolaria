@@ -1,6 +1,8 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items
@@ -10,7 +12,9 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Tonbogiri");
-            Tooltip.SetDefault("A legendary Japanese spear coated in venom\nWeakens in Underworld");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Tonbogiri");
+            Tooltip.SetDefault("A legendary Japanese spear coated in venom" + "\nWeakens in Underworld");
+            Tooltip.AddTranslation(GameCulture.Spanish, "Una legendaria lanza japonesa cubierta de veneno" + "\nSe debilita en el inframundo");
         }
         public override void SetDefaults()
         {

@@ -1,11 +1,19 @@
 using Terraria;
 using Terraria.ModLoader;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ID;
 
 namespace Consolaria.Items.Banners
 {
 	public class ArchWyvernBanner : ModItem
 	{
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Arch Wyvern Banner");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Estandarte de Archiguiverno");
+		}
+
 		public override void SetDefaults()
         {
 			item.width = 10;

@@ -1,6 +1,8 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Projectiles
@@ -18,6 +20,7 @@ namespace Consolaria.Projectiles
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Eternity Laser");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Láser de la Eternidad");
 		}
 
 		public override void SetDefaults()

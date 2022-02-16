@@ -1,4 +1,6 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Armor
@@ -18,7 +20,9 @@ namespace Consolaria.Items.Armor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Boots of Ostara");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Botas de Ostara");
             Tooltip.SetDefault("5% increased movement speed" + "\nAllows the wearer to perform a bunny hop, ");
+            Tooltip.AddTranslation(GameCulture.Spanish, "5% Aumenta la velocidad de movimiento"+"\nPermite al usuario realizar un salto de conejo,");
         }
         public override void UpdateEquip(Player player)
         {

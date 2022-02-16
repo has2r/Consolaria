@@ -1,4 +1,6 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.AncientArmor
@@ -18,7 +20,9 @@ namespace Consolaria.Items.AncientArmor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Ancient Dragon Mask");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Máscara de Dragón Antigua");
             Tooltip.SetDefault("10% increased melee speed and damage" + "\n15% increased melee critical strike chance" + "\n'Ceremonial armor of a fabled warrior'");
+            Tooltip.AddTranslation(GameCulture.Spanish, "10% aumento de velocidad y daño cuerpo a cuerpo" + "\n15% aumento de probabilidad de golpe crítico cuerpo a cuerpo" + "\n'Armadura ceremonial de un legendario guerrero'");
         }
 
         public override void UpdateEquip(Player player)

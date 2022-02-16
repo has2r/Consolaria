@@ -1,10 +1,18 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Banners
 {
 	public class SpectralGastropodBanner : ModItem
 	{
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Spectral Gastropod Banner");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Estandarte de Gasterópodo Espectral");
+		}
+
 		public override void SetDefaults()
         {
 			item.width = 10;

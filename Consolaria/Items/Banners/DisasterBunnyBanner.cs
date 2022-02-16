@@ -1,4 +1,6 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.Banners
@@ -7,7 +9,8 @@ namespace Consolaria.Items.Banners
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Diseaster Bunny");
+			DisplayName.SetDefault("Diseaster Bunny Banner");
+			DisplayName.AddTranslation(GameCulture.Spanish, "Estandarte de Conejito de la Enfermedad");
 		}
 		public override void SetDefaults()
 		{

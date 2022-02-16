@@ -1,5 +1,7 @@
 using Terraria;
 using Terraria.ID;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.NPCs.Lepus
@@ -40,6 +42,7 @@ namespace Consolaria.NPCs.Lepus
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Diseaster Bunny");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Conejito de la Enfermedad");
             Main.npcFrameCount[npc.type] = 7;
         }
         public override void NPCLoot()

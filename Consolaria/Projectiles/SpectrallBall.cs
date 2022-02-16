@@ -1,6 +1,8 @@
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Projectiles
@@ -9,7 +11,8 @@ namespace Consolaria.Projectiles
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Spectrall Ball");
+            DisplayName.SetDefault("Spectral Ball");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Bola Espectral");
         }
         public override void SetDefaults()
         {

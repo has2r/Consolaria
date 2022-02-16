@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using ReLogic.Localization.IME;
 using Terraria.Localization;
 
 namespace Consolaria.Items.Vanity
@@ -20,8 +21,10 @@ namespace Consolaria.Items.Vanity
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("George's Pants");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Pantalones de esmoquin de George");
             Tooltip.SetDefault("Oh myyy!");
-            DisplayName.AddTranslation(GameCulture.Russian, "Штаны Мафиозника");
+            Tooltip.AddTranslation(GameCulture.Spanish, "ВЎOh mi!");
+            DisplayName.AddTranslation(GameCulture.Russian, "пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
             Tooltip.AddTranslation(GameCulture.Russian, "");
         }
     }

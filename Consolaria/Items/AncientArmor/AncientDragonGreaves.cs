@@ -1,4 +1,6 @@
 using Terraria;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Consolaria.Items.AncientArmor
@@ -18,7 +20,9 @@ namespace Consolaria.Items.AncientArmor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Ancient Dragon Greaves");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Grebas de Dragón Antiguas");
             Tooltip.SetDefault("15% increased movement speed" + "\n'Ceremonial armor of a fabled warrior'");
+            Tooltip.AddTranslation(GameCulture.Spanish, "15% aumento de velocidad de movimiento" + "\n'Armadura ceremonial de un legendario guerrero'");
         }
 
         public override void UpdateEquip(Player player)

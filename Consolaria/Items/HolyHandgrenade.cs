@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
+using ReLogic.Localization.IME;
+using Terraria.Localization;
 using Microsoft.Xna.Framework;
 
 namespace Consolaria.Items
@@ -30,7 +32,9 @@ namespace Consolaria.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Holy Hand Grenade");
+            DisplayName.AddTranslation(GameCulture.Spanish, "Granada de mano sagrada");
             Tooltip.SetDefault("The Lord's chosen weapon");
+            Tooltip.AddTranslation(GameCulture.Spanish, "El arma elegida del Señor");
         }
 
         public override void AddRecipes()
