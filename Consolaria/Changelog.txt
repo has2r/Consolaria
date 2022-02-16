@@ -1,3 +1,5 @@
+1.2.3.7:
+- Added Spanish translation
 1.2.3.6:
 - Reworked Dragon Snatcher AI and drastically lowered its spawnrate
 - Lowered Cabbage drop chance from Dragon Snatcher
